@@ -1,0 +1,11 @@
+node_modules
+dist
+.cache
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Apple stuff
+.DS_Store
