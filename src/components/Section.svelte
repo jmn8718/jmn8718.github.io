@@ -15,7 +15,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 80%;
+    max-width: 70%;
     justify-content: center;
   }
 </style>

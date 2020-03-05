@@ -15,7 +15,7 @@
   <WrokBlock
     companyName="Threelabs"
     period="August 2019 - Present"
-    location="Seoul"
+    location="Seoul 🇰🇷"
     role="Software Engineer">
     Working on
     <a href="https://plingo.io/" target="_blank">Plingo</a>
@@ -51,7 +51,7 @@
     companyName="Auth0"
     link="https://auth0.com/"
     period="September 2018 - July 2019"
-    location="Remote - Madrid"
+    location="Remote - Madrid 🇪🇸"
     role="Software Engineer">
     Initialy I worked on the Sustainment team. My task involved analyze current
     codebase to invesitgate the root of issues on our codebase, it involved to
@@ -79,7 +79,7 @@
     companyName="Bitholla"
     link="https://bitholla.com/"
     period="July 2017 - June 2018"
-    location="Remote - Madrid/Seoul"
+    location="Remote - Madrid 🇪🇸 /Seoul 🇰🇷"
     role="Lead Software Engineer">
     I was responsible of the design, development and deployments of our systems.
     We builded a cryptocurrency platform. We have developed a crypto exchange
@@ -101,7 +101,7 @@
   <WrokBlock
     companyName="Famoco"
     link="https://www.famoco.com/"
-    location="Brussels"
+    location="Brussels 🇧🇪"
     period="July 2016 - July 2017"
     role="Fullstack developer">
     My main project is developing a SPA in React, we use redux, redux-sagas; We
@@ -118,7 +118,7 @@
   <WrokBlock
     companyName="Beeva"
     period="May 2015 - July 2016"
-    location="Madrid"
+    location="Madrid 🇪🇸"
     role="Fullstack developer">
     On my project bbvaapimarket.com we developed a portal to manage access to
     Apis. We followed a Scrum methodology of development. In the beginning my
@@ -144,7 +144,7 @@
   <WrokBlock
     companyName="Cloudroom"
     period="February 2015 - May 2015"
-    location="Madrid"
+    location="Madrid 🇪🇸"
     role="Fullstack developer (Internship)">
     This was part of my master, where I was part of the development team with
     other students. In this project I was part of the design and develop stages

@@ -21,10 +21,14 @@
     justify-content: space-around;
     margin: 16px;
   }
+  .text {
+    text-align: center;
+    width: 100%;
+  }
 </style>
 
 <Section {...props}>
-  <p>
+  <p class="text">
     If you want to contact me, just send me an email to
     <a href="mailto: jmn8718@gmail.com">jmn8718@gmail.com</a>
     or contact me at

@@ -15,8 +15,7 @@
   }
   .title {
     text-align: center;
-    font-size: 1.5em;
-    color: #222;
+    font-size: 1.75em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
@@ -42,10 +41,10 @@
 <div class="wrapper">
   {#if link}
     <a href={link} target="_blank">
-      <h3 class="title">{companyName}</h3>
+      <h3 class="title color_title">{companyName}</h3>
     </a>
   {:else}
-    <h3 class="title">{companyName}</h3>
+    <h3 class="title color_title">{companyName}</h3>
   {/if}
   <div class="information">
     <p>

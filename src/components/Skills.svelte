@@ -21,7 +21,7 @@
     <SkillImage text="NodeJS" imageName="node" />
     <SkillImage text="ReactJS" imageName="react" />
     <SkillImage text="Javascript" imageName="js" />
-    <SkillImage text="HTML" imageName="html" />
+    <SkillImage text="HTML" imageName="html5" />
     <SkillImage text="CSS" imageName="css" />
     <SkillImage text="Docker" imageName="docker" />
     <SkillImage text="MongoDB" imageName="mongo" />

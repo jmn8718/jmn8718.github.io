@@ -23,26 +23,16 @@
   }
   .block_title {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.75em;
     color: #222;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-  }
-  .project_title {
-    text-align: center;
-    font-size: 1.25em;
-    color: rgb(65, 64, 64);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  p {
-    width: 100%;
   }
 </style>
 
 <Section {...props}>
   <div class="wrapper">
-    <h3 class="block_title">Profesional Projects</h3>
+    <h3 class="block_title m-0">Profesional Projects</h3>
 
     <ProjectBlock
       link="https://plingo.io"
