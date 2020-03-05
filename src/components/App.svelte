@@ -1,6 +1,7 @@
 <script>
   import Header from "./Header.svelte";
   import About from "./About.svelte";
+  import Skills from "./Skills.svelte";
   import Education from "./Education.svelte";
   import Experience from "./Experience.svelte";
   import Projects from "./Projects.svelte";
@@ -25,6 +26,7 @@
 <div class="container" id="home">
   <div class="content">
     <About />
+    <Skills />
     <Experience />
     <Education />
     <Projects />

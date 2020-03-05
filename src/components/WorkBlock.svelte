@@ -2,6 +2,7 @@
   export let companyName = "Threelabs";
   export let link = "";
   export let period = "Since August of 2019";
+  export let location = "";
   export let role = "Software Engineer";
 </script>
 
@@ -50,6 +51,10 @@
     <p>
       <strong>Role</strong>
       : {role}
+    </p>
+    <p>
+      <strong>Location</strong>
+      : {location}
     </p>
     <p>
       <strong>Period</strong>

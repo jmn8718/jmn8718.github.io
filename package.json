@@ -8,10 +8,9 @@
     "last 1 chrome versions"
   ],
   "scripts": {
-    "dev": "parcel watch src/index.html",
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "predeploy": "rm -rf dist && parcel build index.html",
+    "build": "parcel build src/index.html ",
+    "predeploy": "rm -rf dist && npm run build",
     "deploy": "gh-pages -d dist -b master"
   },
   "devDependencies": {
@@ -23,6 +22,10 @@
   },
   "dependencies": {
     "svelte-awesome": "^2.2.1"
+  },
+  "staticFiles": {
+    "staticPath": "src",
+    "watcherGlob": "**/*.png"
   },
   "repository": {
     "type": "git",

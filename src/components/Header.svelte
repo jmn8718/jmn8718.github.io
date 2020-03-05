@@ -19,6 +19,7 @@
   .filled {
     background: rgb(80, 79, 79, 1);
     color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 10px 5px rgba(80, 79, 79,0.5);
   }
   .nav_list {
     list-style-type: none;
