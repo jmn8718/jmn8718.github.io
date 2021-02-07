@@ -2,6 +2,9 @@
 
 Portfolio made with svelte and parceljs.
 
+# Notes
+
+- Use node v12. With v14 parcel throws an [error](https://github.com/parcel-bundler/parcel/issues/4691)
 
 ## Resources
 

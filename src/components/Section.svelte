@@ -4,6 +4,13 @@
   export let title;
 </script>
 
+<div {id} class="section_container">
+  <Title text={title} />
+  <div class="section_content">
+    <slot />
+  </div>
+</div>
+
 <style>
   .section_container {
     width: 100%;
@@ -15,14 +22,13 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 70%;
+    max-width: 75%;
     justify-content: center;
   }
-</style>
 
-<div {id} class="section_container">
-  <Title text={title} />
-  <div class="section_content">
-    <slot />
-  </div>
-</div>
+  @media only screen and (max-width: 768px) {
+    .section_content {
+      max-width: 90%;
+    }
+  }
+</style>

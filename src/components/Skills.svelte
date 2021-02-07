@@ -28,5 +28,6 @@
     <SkillImage text="PostgreSQL" imageName="postgre" />
     <SkillImage text="Redis" imageName="redis" />
     <SkillImage text="Github" imageName="github" />
+    <SkillImage text="AWS" imageName="aws" />
   </div>
 </Section>

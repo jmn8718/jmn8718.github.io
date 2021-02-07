@@ -5,27 +5,15 @@
     github,
     linkedin,
     medium,
-    envelope
+    envelope,
   } from "svelte-awesome/icons";
 
   import Section from "./Section.svelte";
   const props = {
     id: "contact",
-    title: "Contact"
+    title: "Contact",
   };
 </script>
-
-<style>
-  .icons_wrapper {
-    display: flex;
-    justify-content: space-around;
-    margin: 16px;
-  }
-  .text {
-    text-align: center;
-    width: 100%;
-  }
-</style>
 
 <Section {...props}>
   <p class="text">
@@ -33,7 +21,7 @@
     <a href="mailto: jmn8718@gmail.com">jmn8718@gmail.com</a>
     or contact me at
   </p>
-  <div class="icons_wrapper">
+  <div class="icons_wrapper contact_icons">
     <a href="mailto: jmn8718@gmail.com" target="_blank">
       <Icon data={envelope} scale="2" class="icon_item" />
     </a>
@@ -51,3 +39,18 @@
     </a>
   </div>
 </Section>
+
+<style>
+  .icons_wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 16px;
+  }
+  .icons_wrapper a {
+    margin: 0 8px;
+  }
+  .text {
+    text-align: center;
+    width: 100%;
+  }
+</style>

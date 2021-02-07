@@ -3,56 +3,76 @@
   import WrokBlock from "./WorkBlock.svelte";
   const props = {
     id: "experience",
-    title: "Experience"
+    title: "Experience",
   };
 </script>
 
-<style>
-
-</style>
-
 <Section {...props}>
   <WrokBlock
-    companyName="Threelabs"
-    period="August 2019 - Present"
-    location="Seoul 🇰🇷"
-    role="Software Engineer">
+    companyName="Criptan"
+    period="January 2021 - Present"
+    location="Remote - Seoul 🇰🇷"
+    role="Software Engineer"
+  >
     Working on
+    <a href="https://www.criptan.es/?lang=en" target="_blank">Criptan</a>
+    on the backend.
+    <br />
+    <ul>
+      <li>Develop AWS Lambdas with nodejs and typescript.</li>
+      <li>Build API using AWS API Gateway with Lambda</li>
+      <li>
+        Develop internal API for admin with App AWS Appsync, Amplify and Cognito
+      </li>
+      <li>Build, deploy and configure admin frontent with React-admin</li>
+    </ul>
+  </WrokBlock>
+  <WrokBlock
+    companyName="Threelabs"
+    period="August 2019 - January 2021"
+    location="Seoul 🇰🇷"
+    role="Software Engineer"
+  >
+    Worked on
     <a href="https://plingo.io/" target="_blank">Plingo</a>
     developing the architecture and the services for our mobile application.
     <br />
-    My role involves to work on different stages of the development flow on our
-    service.
+    My role involved to work on different stages of the development flow on our service.
     <br />
     <ul>
       <li>
         Design and discuss about new functionalities and design API endpoint for
-        the mobile app
+        the mobile app.
       </li>
       <li>
-        Develop and test new functionalities. And refactor existing codebase to
-        improve the performance.
+        Develop and test new functionalities on the backend, and refactor
+        existing codebase to improve the performance.<br />
+        Backend uses nodejs, with MongoDB (with mongoose) and Redis for websockets
+        with socket.io and caching for db queries.
       </li>
       <li>
-        Configure and manage different services on AWS to deploy the service,
-        using docker, ECS, lambda and CodePipeline.
+        Configure and manage different services on AWS to deploy the backend
+        service, using docker, ECS, lambda and CodePipeline.
+      </li>
+      <li>Develop and mantain lambda function for internal services.</li>
+      <li>
+        Refactor and develop new functionalities for the mobile app using react
+        native.
       </li>
       <li>
-        Develop new functionalities on client application and admin client.
+        Develop new functionalities for admin client built with react-admin.<br
+        />
+        Deploy to S3 and Cloudfront using CodePipeline.
       </li>
     </ul>
-    On the server, we use nodejs for the API and lambda functions.
-    <br />
-    On the client, we use react with nextjs for SSR.
-    <br />
-    Databases, MongoDB and Redis
   </WrokBlock>
   <WrokBlock
     companyName="Auth0"
     link="https://auth0.com/"
     period="September 2018 - July 2019"
     location="Remote - Madrid 🇪🇸"
-    role="Software Engineer">
+    role="Software Engineer"
+  >
     Initialy I worked on the Sustainment team. My task involved analyze current
     codebase to invesitgate the root of issues on our codebase, it involved to
     analyze differente projects and flows to determine the nature of the issue.
@@ -61,26 +81,26 @@
     changes to solve the issue.
     <br />
     As part of working on each issue, I wrote an internal post to help in future
-    cases for other members, whether is to help them to setup the environment
-    for their work or to write the process so anyone can know my decision and
-    reasons of my actions
+    cases for other members, whether is to help them to setup the environment for
+    their work or to write the process so anyone can know my decision and reasons
+    of my actions
     <br />
-    As part of my team task, I had to be on concierge as our team is remote
-    based, so when I am the one in my timezome, I took charge of help other
-    member of Auth0 when they required help of my team and also to be the
-    responsible of my time when we have to handle internal incidents and we need
-    to be present.
+    As part of my team task, I had to be on concierge as our team is remote based,
+    so when I am the one in my timezome, I took charge of help other member of Auth0
+    when they required help of my team and also to be the responsible of my time
+    when we have to handle internal incidents and we need to be present.
     <br />
-    Later I was moved to one of the core teams "Protocols and sessions", were I
-    was a member of the team that worked on the different protocols that were
-    integrated on the system and how the sessions are handled.
+    Later I was moved to one of the core teams "Protocols and sessions", were I was
+    a member of the team that worked on the different protocols that were integrated
+    on the system and how the sessions are handled.
   </WrokBlock>
   <WrokBlock
     companyName="Bitholla"
     link="https://bitholla.com/"
     period="July 2017 - June 2018"
     location="Remote - Madrid 🇪🇸 /Seoul 🇰🇷"
-    role="Lead Software Engineer">
+    role="Lead Software Engineer"
+  >
     I was responsible of the design, development and deployments of our systems.
     We builded a cryptocurrency platform. We have developed a crypto exchange
     and a trading platform for cryptocurrencies using different crypto
@@ -103,7 +123,8 @@
     link="https://www.famoco.com/"
     location="Brussels 🇧🇪"
     period="July 2016 - July 2017"
-    role="Fullstack developer">
+    role="Fullstack developer"
+  >
     My main project is developing a SPA in React, we use redux, redux-sagas; We
     are porting a Django and Boostrap application to React, using material
     design as our main guidelines, and consuming the API that our backend team
@@ -119,7 +140,8 @@
     companyName="Beeva"
     period="May 2015 - July 2016"
     location="Madrid 🇪🇸"
-    role="Fullstack developer">
+    role="Fullstack developer"
+  >
     On my project bbvaapimarket.com we developed a portal to manage access to
     Apis. We followed a Scrum methodology of development. In the beginning my
     main task was developing selenium test to satisfy the features that the
@@ -145,7 +167,8 @@
     companyName="Cloudroom"
     period="February 2015 - May 2015"
     location="Madrid 🇪🇸"
-    role="Fullstack developer (Internship)">
+    role="Fullstack developer (Internship)"
+  >
     This was part of my master, where I was part of the development team with
     other students. In this project I was part of the design and develop stages
     of the project. We follow a Scrum methodology with 3 weeks iterations. It
@@ -162,3 +185,5 @@
     project, where I learned a lot of about the lifecycle of a software project.
   </WrokBlock>
 </Section>
+
+<Section />
