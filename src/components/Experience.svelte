@@ -185,5 +185,3 @@
     project, where I learned a lot of about the lifecycle of a software project.
   </WrokBlock>
 </Section>
-
-<Section />
