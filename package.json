@@ -18,7 +18,7 @@
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.6",
     "sass": "^1.26.2",
-    "svelte": "^3.19.1"
+    "svelte": "^3.49.0"
   },
   "dependencies": {
     "svelte-awesome": "^2.2.1"
