@@ -35,31 +35,31 @@
     <h3 class="block_title m-0">Profesional Projects</h3>
 
     <ProjectBlock
+      link="https://criptan.com/"
+      projectName="Criptan"
+      description="Crypto finance application">
+      During my time on this project, I took on various responsibilities including:
+      <ul>
+        <li>Developing serveless backend services for the application using AWS technologies</li>
+        <li>Developing serveless backend services for the application using AWS technologies</li>
+        <li>Designing and developing new services to meet the technical requirements of the project.</li>
+      </ul>
+      Through this experience, I gained expertise in AWS technologies, system architecture, and software development best practices.
+    </ProjectBlock>
+    <ProjectBlock
       link="https://plingo.io"
       projectName="Plingo"
       description="Online language education platform">
-      My work involves working on the server side, both developing
-      functionalities and develop different services on AWS.
-      <br />
-      Also I develop new functionalities on the admin client and the web
-      application.
+      As part of my role, I primarily focused on server-side development where I was responsible for designing and implementing various functionalities and services on AWS.
     </ProjectBlock>
 
     <ProjectBlock
       link="https://hollaex.com/"
       projectName="Hollaex"
       description="Cryptocurrency Exchange">
-      My work on this project was in both server and client. I started the
-      project from scratch on the server side, and started the client once the
-      server had basic functionality.
+      I was responsible for both the server and client sides of the project. Starting from scratch, I began by building basic functionality on the server side and then moved on to the client side once the server had been set up. I worked closely with the CEO to implement functionality based on market-specific requirements, while also ensuring that the project was fully customizable using SQL triggers and functions at the database level
       <br />
-      Worked side by side to CEO to implement functionality that was coming from
-      the requirement as we build the project for an especific market, but I
-      visualize the customization so build it to be fully customizable using SQL
-      triggers and functions on DB level
-      <br />
-      I made the project full customizable so it can be used in different fiat
-      currencies and use any type of cryptocurrencies for trading.
+      WMy goal was to create a system that could be adapted to different fiat currencies and any type of cryptocurrencies for trading purposes. As a result, I made the project fully customizable to meet the needs of various clients.
       <br />
       First deployed Crypto exchange
       <a
@@ -75,37 +75,20 @@
       link="https://xray.trade/"
       projectName="XRAY"
       description="Cryptocurrency Trade platform.">
-      My work on this project was in both server and client. In both sides I was
-      in charge of refactor and migrate to a new structure
+      I was responsible for both server and client-side development on this project. My main task was to refactor and migrate the codebase to a new structure.
       <br />
-      On the server I migrated/refactored the code to move from mongoDb to
-      PostgreSQL. Also refactor of the existing code to use promises instead of
-      callback as part of the migration to PostgreSQL.
+      On the server side, I migrated the codebase from mongoDB to PostgreSQL and refactored the existing code to use promises instead of callbacks, as part of the migration process.
       <br />
-      On the client, I was in charge of building the skeleton of the current
-      design and core components to be used in the trading screen.
-      <br />
-      Also provided feedback on the user experience from testing and using as a
-      customer, working side by side with designer to take the best approach.
+      On the client side, I built the skeleton of the current design and developed core components to be used in the trading screen. Additionally, I provided valuable feedback on user experience as a customer and worked closely with the designer to improve the approach.
     </ProjectBlock>
     <ProjectBlock
       link="https://www.bbvaapimarket.com"
       projectName="BBVA APIMarket"
       description="API portal for developers">
-      On the first stage of the project I worked in different areas:
-      <ul>
-        <li>Frontend with angularjs, sass and jquery</li>
-        <li>Liferay CMS</li>
-        <li>Scripts in bash, python and nodejs for internal services</li>
-      </ul>
-      On the second stage, I worked on the backend with Java and Spring
-      <br />
-      One of the main parts I worked on was on the documentation of the API
-      processing a RAML to generate the static documentation to be published on
-      the portal, you can check one documentation
+      During the first stage of the project, I contributed to different areas including frontend development with AngularJS, SASS, and jQuery, CMS development with Liferay, and scripting for internal services using Bash, Python, and Node.js. In the second stage, my focus was on backend development using Java and Spring. A significant portion of my contribution was on documenting the API by processing a RAML to generate static documentation that was published on the portal. You can take a look at one of the documentations I worked on
       <strong>
         <a
-          href="https://www.bbvaapimarket.com/documentation/bbva/loans"
+          href="https://es.bbvaapimarket.com/documentation/bancomer/accounts?lang=es"
           target="_blank">
           here
         </a>

@@ -10,7 +10,7 @@
 </style>
 
 <footer>
-  @2021 Jose Navarro, made with
+  @2023 Jose Navarro, made with
   <a href="https://svelte.dev/" target="_blank">Svelte</a>
   and
   <a href="https://parceljs.org/" target="_blank">Parcel</a>
