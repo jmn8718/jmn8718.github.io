@@ -14,9 +14,12 @@
     "deploy": "gh-pages -d dist -b master"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
     "gh-pages": "^2.2.0",
+    "parcel": "^2.8.3",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.6",
+    "parcel-transformer-svelte": "^1.2.3",
     "sass": "^1.26.2",
     "svelte": "^3.49.0"
   },

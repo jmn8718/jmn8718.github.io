@@ -1,4 +1,4 @@
-<script>
+<script type="module">
   export let companyName = "Threelabs";
   export let link = "";
   export let period = "Since August of 2019";

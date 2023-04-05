@@ -1,4 +1,4 @@
-<script>
+<script type="module">
   export let text;
   export let imageName;
   import aws from "../images/aws.png";

@@ -1,4 +1,4 @@
-<script>
+<script type="module">
   import { onMount } from "svelte";
   export let once = false;
   export let top = 0;

@@ -1,4 +1,4 @@
-<script>
+<script type="module">
   import Icon from "svelte-awesome";
   import { desktop } from "svelte-awesome/icons";
   export let link;

@@ -1,4 +1,4 @@
-<script>
+<script type="module">
   export let text = "Title";
 </script>
 

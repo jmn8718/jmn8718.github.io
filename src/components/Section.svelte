@@ -1,4 +1,4 @@
-<script>
+<script type="module">
   import Title from "./Title.svelte";
   export let id;
   export let title;
