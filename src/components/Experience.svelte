@@ -14,18 +14,11 @@
     location="Remote - Seoul 🇰🇷"
     role="Software Engineer"
   >
-    Working on
-    <a href="https://www.criptan.es/?lang=en" target="_blank">Criptan</a>
-    on the backend.
+    As a Senior Software Engineer <a href="https://www.criptan.es/?lang=en" target="_blank">Criptan</a>, I am responsible for developing backend services using serverless Lambda functions with Node.js and TypeScript. To define and deploy the architecture of the services, we utilize the AWS Cloud Development Kit (CDK). Our services are built using a variety of AWS tools and services, including Lambda, ECS, DynamoDB, queues, and event buses, to create an event-based architecture.
     <br />
-    <ul>
-      <li>Develop AWS Lambdas with nodejs and typescript.</li>
-      <li>Build API using AWS API Gateway with Lambda</li>
-      <li>
-        Develop internal API for admin with App AWS Appsync, Amplify and Cognito
-      </li>
-      <li>Build, deploy and configure admin frontent with React-admin</li>
-    </ul>
+    We utilize both SQL and DynamoDB for our database needs, and we leverage events from the database records to perform other operations.
+    <br />
+    As a key member of the team, I am responsible for developing core projects from the ground up and spearheading the refactor of our core business logic from PHP to TypeScript. I also collaborate closely with our operations and product owners to carefully review and refine development requirements, ensuring our solutions are aligned with our clients' needs.
   </WrokBlock>
   <WrokBlock
     companyName="Threelabs"
@@ -33,38 +26,16 @@
     location="Seoul 🇰🇷"
     role="Software Engineer"
   >
-    Worked on
+    During my time at
     <a href="https://plingo.io/" target="_blank">Plingo</a>
-    developing the architecture and the services for our mobile application.
+    as Software Engineer, , I played a key role in developing the architecture and services for our mobile application. I worked on various stages of the development flow, including designing and discussing new functionalities, designing API endpoints for the mobile app, and developing and testing new functionalities on the backend.
     <br />
-    My role involved to work on different stages of the development flow on our service.
+    To optimize performance, I also refactored existing codebase on the backend. Our backend services were built using Node.js with MongoDB (with Mongoose) and Redis for websockets with Socket.io, as well as caching for database queries. I also configured and managed different services on AWS, including deploying the backend service using Docker, ECS, Lambda, and CodePipeline.
     <br />
-    <ul>
-      <li>
-        Design and discuss about new functionalities and design API endpoint for
-        the mobile app.
-      </li>
-      <li>
-        Develop and test new functionalities on the backend, and refactor
-        existing codebase to improve the performance.<br />
-        Backend uses nodejs, with MongoDB (with mongoose) and Redis for websockets
-        with socket.io and caching for db queries.
-      </li>
-      <li>
-        Configure and manage different services on AWS to deploy the backend
-        service, using docker, ECS, lambda and CodePipeline.
-      </li>
-      <li>Develop and mantain lambda function for internal services.</li>
-      <li>
-        Refactor and develop new functionalities for the mobile app using react
-        native.
-      </li>
-      <li>
-        Develop new functionalities for admin client built with react-admin.<br
-        />
-        Deploy to S3 and Cloudfront using CodePipeline.
-      </li>
-    </ul>
+    Additionally, I developed and maintained Lambda functions for internal services, and worked on refactoring and developing new functionalities for the mobile app using React Native. I also contributed to the development of new functionalities for the admin client built with React-Admin, I deployed it to S3 and CloudFront using CodePipeline.
+    <br />
+    Overall, my role involved ensuring the smooth and efficient functioning of the backend services, and continually improving the performance and functionality of the application.
+    <br />
   </WrokBlock>
   <WrokBlock
     companyName="Auth0"
@@ -73,26 +44,11 @@
     location="Remote - Madrid 🇪🇸"
     role="Software Engineer"
   >
-    Initialy I worked on the Sustainment team. My task involved analyze current
-    codebase to invesitgate the root of issues on our codebase, it involved to
-    analyze differente projects and flows to determine the nature of the issue.
-    On my tasks I have to contact with members of other teams and work with them
-    to find the best solution for each case. Then I will work on apply the
-    changes to solve the issue.
+    I began my time at Auth0 working on the Sustainment team, where I analyzed the codebase to identify the root cause of issues. This involved closely analyzing various projects and workflows to determine the nature of the problem. I worked closely with members of other teams to devise the best possible solutions, and then implemented the necessary changes to address the issues at hand.
     <br />
-    As part of working on each issue, I wrote an internal post to help in future
-    cases for other members, whether is to help them to setup the environment for
-    their work or to write the process so anyone can know my decision and reasons
-    of my actions
+    To help my team in the future, I wrote internal posts that documented my thought process and actions, providing a valuable resource for my colleagues. Additionally, as our team was remote-based, I occasionally served as the "concierge," helping other members of Auth0 when they needed assistance and managing my time effectively during internal incidents.
     <br />
-    As part of my team task, I had to be on concierge as our team is remote based,
-    so when I am the one in my timezome, I took charge of help other member of Auth0
-    when they required help of my team and also to be the responsible of my time
-    when we have to handle internal incidents and we need to be present.
-    <br />
-    Later I was moved to one of the core teams "Protocols and sessions", were I was
-    a member of the team that worked on the different protocols that were integrated
-    on the system and how the sessions are handled.
+    Subsequently, I transitioned to the Protocols and Sessions core team, where I was part of a team responsible for working on various protocols integrated into the system and managing sessions. This role involved a deep understanding of the technical architecture and how different protocols interacted with one another. Overall, my experience at Auth0 enabled me to hone my analytical skills and work collaboratively with a diverse team to tackle complex engineering challenges.
   </WrokBlock>
   <WrokBlock
     companyName="Bitholla"
@@ -101,22 +57,11 @@
     location="Remote - Madrid 🇪🇸 /Seoul 🇰🇷"
     role="Lead Software Engineer"
   >
-    I was responsible of the design, development and deployments of our systems.
-    We builded a cryptocurrency platform. We have developed a crypto exchange
-    and a trading platform for cryptocurrencies using different crypto
-    exchanges. For our server side code we uses nodejs and for the client side
-    we uses react and redux. The system are live systems so we used websockets
-    to connect the server with the client.
+    I began my tenure as a Full Stack Engineer and within three months, was promoted to Lead Software Engineer. In this role, I was responsible for designing, developing, and deploying our cryptocurrency platform. Our team built both a crypto exchange and a trading platform for cryptocurrencies using different crypto exchanges. Node.js was used for server-side development, while React and Redux were used for client-side development. As the systems were live, websockets were implemented to facilitate communication between the server and client.
     <br />
-    Tasks:
-    <ul>
-      <li>Designing crypto exchange</li>
-      <li>Develop API with node, express and swagger</li>
-      <li>Deploying on AWS and docker</li>
-      <li>Work with postgresql, redis and mongoDB</li>
-      <li>Work with socket.io</li>
-      <li>Developing SPA with react and websockets</li>
-    </ul>
+    My primary responsibilities included designing the crypto exchange, developing APIs using Node.js, Express, and Swagger, and deploying the platform on AWS and Docker. Additionally, I worked with Postgresql, Redis, and MongoDB to manage databases and implemented socket.io to ensure seamless websockets connectivity. Lastly, I was responsible for developing SPAs using React and websockets.
+    <br />
+    Overall, my experience in leading the development of a cryptocurrency platform allowed me to expand my skill set and gain valuable experience in designing, developing, and deploying live systems with cutting-edge technologies.
   </WrokBlock>
   <WrokBlock
     companyName="Famoco"
@@ -125,16 +70,7 @@
     period="July 2016 - July 2017"
     role="Fullstack developer"
   >
-    My main project is developing a SPA in React, we use redux, redux-sagas; We
-    are porting a Django and Boostrap application to React, using material
-    design as our main guidelines, and consuming the API that our backend team
-    are developing. We work hand by hand in the Frontend and Backend applying
-    agile techniches for the development. As a side projects I develop android
-    apps (because our devices use Android) using React Native; Also I develop
-    web apps with React, so I can use that project to test future features of
-    our main app. For this projects I mainly develop servers with nodejs,
-    developing a REST API or a graphql server for the apps. To deploy this
-    project I used docker.
+    I led the development of a Single Page Application (SPA) using React, Redux, and Redux-Sagas. The project involved porting an existing Django and Bootstrap application to React while adhering to Material Design guidelines and consuming the API developed by our backend team. Working closely with the Backend team, we utilized Agile methodologies for development. I also developed Android applications (as our devices used Android) using React Native, and web applications with React to test future features for our main app. For these projects, I developed servers with Node.js, implementing either a REST API or a GraphQL server. To facilitate deployment, I utilized Docker.
   </WrokBlock>
   <WrokBlock
     companyName="Beeva"
@@ -142,26 +78,11 @@
     location="Madrid 🇪🇸"
     role="Fullstack developer"
   >
-    On my project bbvaapimarket.com we developed a portal to manage access to
-    Apis. We followed a Scrum methodology of development. In the beginning my
-    main task was developing selenium test to satisfy the features that the
-    Product Owner described. After a couple of month and know better about the
-    project, I joined the frontend development tasks, where we developed the
-    styles, layouts... to satisfy the design of the project of an angularjs app
-    that run over Liferay. As we needed more features, I developed some Liferay
-    portlets in Java that consume API services and connect that data with the
-    angularjs app that we developed. Aside for the frontend project, we required
-    some small projects that i developed in nodejs. As we were provider to
-    access of 3rd party APIs, we have a RAML documentation from other teams, so
-    my project was to transform the RAML into a html+css+js that we publish in
-    our site, where my task where develop the server that handle the
-    transformation, develop the templates and style of the design for the
-    project, and review the RAML. Thanks to this side project I got to know more
-    about APIs and the need of a good documentation in development. After the
-    beta release, we changed from angular to polymer, and moved away from
-    Liferay to a REST API for our SPA app. In this second stage, I was part of
-    the backend team, where I developed services for the internal API, we used
-    JAVA and Spring.
+    During my time at bbvaapimarket.com, I was part of a Scrum team that developed a portal for managing API access. Initially, my task involved developing Selenium tests to ensure the product met the Product Owner's requirements. After gaining a better understanding of the project, I joined the frontend development team, where I helped develop the styles and layouts of the project using AngularJS running on Liferay. As we required more features, I developed Liferay portlets in Java that consumed API services and connected the data with the AngularJS app.
+    <br />
+    Apart from the frontend project, I also worked on some small projects in NodeJS. As we provided access to third-party APIs, we had a RAML documentation from other teams, and my task was to transform the RAML into an HTML+CSS+JS that we published on our site. I developed the server that handled the transformation, developed the templates and styles for the project, and reviewed the RAML. This side project helped me understand the importance of good API documentation in development.
+    <br />
+    After the beta release, we switched from Angular to Polymer and moved away from Liferay to a REST API for our SPA app. In this second stage, I joined the backend team, where I developed services for the internal API using Java and Spring.
   </WrokBlock>
   <WrokBlock
     companyName="Cloudroom"
@@ -169,19 +90,10 @@
     location="Madrid 🇪🇸"
     role="Fullstack developer (Internship)"
   >
-    This was part of my master, where I was part of the development team with
-    other students. In this project I was part of the design and develop stages
-    of the project. We follow a Scrum methodology with 3 weeks iterations. It
-    was a project where we were specify and design the services according to the
-    requirements that we received. We developed a MOOC Learning Platform with a
-    social approach. Our stack of technologies was angularjs, nodejs,
-    coffescript, neo4j, mariadb. In the backend I developed a REST API in nodejs
-    and coffescript, we used a graph database to handle the social approach of
-    resources with many link to other entities. For some resources that required
-    more restricted requirements we used a SQL database (mariadb). We developed
-    test using mocha and chai. For the frontend, as we developed the services,
-    we developed the frontend applications that consumed that services; We used
-    angularjs version 1. In this project I had my first real experience in a web
-    project, where I learned a lot of about the lifecycle of a software project.
+    During my master's degree, I worked as part of a development team consisting of other students. The project was based on Scrum methodology and followed 3-week iterations. Our goal was to design and develop a MOOC Learning Platform that focused on a social approach to learning. I was involved in both the design and development stages of the project. Our tech stack included angularjs, nodejs, coffeescript, neo4j, and MariaDB.
+    <br />
+    For the backend, I developed a REST API using nodejs and coffeescript. We used a graph database to handle the social approach of resources with many links to other entities. For resources that required more restricted requirements, we used a SQL database (MariaDB). We used mocha and chai for testing purposes. On the frontend side, we developed the frontend applications that consumed the services we created. We used angularjs version 1.
+    <br />
+    This project provided me with my first real-world experience in a web project, and I learned a great deal about the software development lifecycle.
   </WrokBlock>
 </Section>

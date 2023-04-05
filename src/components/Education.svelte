@@ -11,30 +11,11 @@
 </style>
 
 <Section {...props}>
-  I graduated in Software engineering in UPM, Madrid on 2013.
+  I earned my degree in Software Engineering from UPM, Madrid. During my studies, I took courses on Unix systems, programming with languages like C++, Java (the primary language), web development, and Android applications. The main focus of the program was on managing software, with courses on project management, agile techniques, design programs, testing, and quality.
   <br />
-  In my courses I took courses on Unix systems, programming where I programmed
-  in C++, Java (the main language), some web development and Android
-  Applications. The main focus of the major is to the managing part of software
-  with courses in Project managaments, agile techniches, design programs,
-  Testing, Quality... In the last year I participated in group project as
-  intern. In that project I developed a desktop application for refactoring
-  source code when a change is made in the SQL queries.
+  In my final year, I participated in a group project as an intern where I developed a desktop application for refactoring source code when a change was made in the SQL queries. This internship helped me write the project for my graduation.
   <br />
-  From this internship I wrote the project for my graduation.
+  After completing my undergraduate degree, I pursued a Master's in Computer Engineering with a specialization in Distributed Software and Services. During this program, I attended more specialized classes in Computer Engineering and learned about new cloud technologies and distributed systems. I also completed an internship as a full-stack developer on a university project.
   <br />
-  <br />
-  After that I attended a Master in Computer Engineering , with the
-  specialization in Distributed software and services.
-  <br />
-  Here I attended more specialized classes of Computer Engineering, and new
-  cloud technologies, and distributed systems. And I completed an internship in
-  a university project as a fullstack developer.
-  <br />
-  <br />
-  Before university, I completed a 2 years profesional formation in Maintenance
-  and management of Industrial equipment, where I learn to manage industrial
-  equipment, making assurance quality plans, managing development process and
-  developing projects where I manage and developed all the stages of a project
-  (plannification, development, testing).
+  Before university, I completed a two-year professional formation in Maintenance and Management of Industrial Equipment. This program taught me how to manage industrial equipment, develop quality assurance plans, manage the development process, and oversee projects where I managed and developed all the stages (planning, development, testing).
 </Section>

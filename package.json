@@ -15,10 +15,10 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-svelte": "^4.0.6",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-svelte": "^4.0.9",
     "sass": "^1.26.2",
-    "svelte": "^3.49.0"
+    "svelte": "^3.58.0"
   },
   "dependencies": {
     "svelte-awesome": "^2.2.1"
