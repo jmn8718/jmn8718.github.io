@@ -14,22 +14,24 @@
 
 <Section {...props}>
   <div class="block">
-    Hello, my name is Jose Miguel. I'm a Software Engineer working at Threelabs
-    in Seoul, South Korea.
+    Hello, my name is Jose Miguel. I'm a Software Engineer working at Criptan remotely from South Korea.
     <br />
     I'm a Software Engineer graduated in UPM, Madrid, with specialization in
     distributed software and services.
     <br />
-    I am passionate about new technologies and I'm always up for new challenges.
+    As an experienced software engineer, I have worked on a variety of projects in different domains and technologies. With a passion for problem-solving and innovation, I take pride in building scalable and maintainable software systems that meet business objectives.
+    <br />
+    My expertise lies in full-stack web development, with strong experience in backend development, API design, and database architecture. I have experience working with a range of technologies such as Java, Node.js, SQL and NoSQL databases, AWS, and more.
+    <br />
+    I have experience working in Agile environments, using methodologies such as Scrum and Kanban, and I am comfortable working both individually and as part of a team. I have been involved in all stages of the software development lifecycle, from gathering requirements and designing solutions to testing and deployment.
+    <br />
+    If you're looking for a motivated, detail-oriented, and results-driven software engineer with a passion for building top-quality software, then let's connect!
   </div>
   <div class="block">
-    Aside from technology, I enjoy photograpy, travel, sport, food, nature. I
-    practice runnning, football, cycling and hiking.
+    In addition to my passion for technology, I also have a keen interest in photography, travel, sports, food, and nature. I love to stay active and participate in various physical activities such as running, football, cycling, and hiking.
     <br />
     <br />
-    Running since 2006, this are some of my achivements
-    <br />
-    <b>PB</b>
+    I've been running since 2006 and have achieved some notable milestones
     <br />
     2015 🇪🇸 San Silvestre Vallecana 10k 34'04''
     <br />
@@ -43,7 +45,5 @@
     <br />
     2008 🇰🇷 Seoul 3h21'36''
     <br />
-    <br />
-    I have hiked to Toubkal (4.167 m) in Morocco, Teide (3.718 m) in Spain
   </div>
 </Section>
