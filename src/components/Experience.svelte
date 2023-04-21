@@ -28,7 +28,7 @@
   >
     During my time at
     <a href="https://plingo.io/" target="_blank">Plingo</a>
-    as Software Engineer, , I played a key role in developing the architecture and services for our mobile application. I worked on various stages of the development flow, including designing and discussing new functionalities, designing API endpoints for the mobile app, and developing and testing new functionalities on the backend.
+    as Software Engineer, I played a key role in developing the architecture and services for our mobile application. I worked on various stages of the development flow, including designing and discussing new functionalities, designing API endpoints for the mobile app, and developing and testing new functionalities on the backend.
     <br />
     To optimize performance, I also refactored existing codebase on the backend. Our backend services were built using Node.js with MongoDB (with Mongoose) and Redis for websockets with Socket.io, as well as caching for database queries. I also configured and managed different services on AWS, including deploying the backend service using Docker, ECS, Lambda, and CodePipeline.
     <br />
