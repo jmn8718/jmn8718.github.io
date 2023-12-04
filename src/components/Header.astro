@@ -1,0 +1,85 @@
+<header>
+    <div class="nav-title">
+      <a href="#home">Jose Navarro</a>
+    </div>
+    <div class="nav-wrapper">
+      <ul>
+        <li>
+          <a href="#experience">experience</a>
+        </li>
+        <li>
+          <a href="#education">education</a>
+        </li>
+        <li>
+          <a href="#projects">projects</a>
+        </li>
+        <li>
+          <a href="#publications">publications</a>
+        </li>
+        <li>
+          <a href="#contact">contact</a>
+        </li>
+      </ul>
+    </div>
+</header>
+
+<style>
+  header {
+    width: 100vw;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+  li a {
+    padding: 11px;
+  }
+  a {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+  }
+
+  .nav-title {
+    min-width: 200px;
+    flex: 0;
+    margin-left: 16px;
+  }
+  .nav-title a {
+    font-size: 1.5rem;
+  }
+  .nav-wrapper {
+    margin-right: 16px;
+  }
+
+  @media screen and (max-width: 640px) {
+    li a {
+      padding: 11px 4px;
+    }
+  }
+  @media screen and (max-width: 580px) {
+    .nav-wrapper {
+      visibility: hidden;
+      display: none;
+    }
+  }
+</style>
+<style is:global>
+  main {
+    padding-top: var(--header-height);
+  }
+</style>

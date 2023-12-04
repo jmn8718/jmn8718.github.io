@@ -1,41 +1,29 @@
-<script>
-  import Icon from "svelte-awesome";
-  import {
-    gitlab,
-    github,
-    linkedin,
-    medium,
-    envelope,
-  } from "svelte-awesome/icons";
+---
+import { Icon } from "astro-icon";
+import Section from "../Section.astro";
+---
 
-  import Section from "./Section.svelte";
-  const props = {
-    id: "contact",
-    title: "Contact",
-  };
-</script>
-
-<Section {...props}>
+<Section title="contact" anchor="contact">
   <p class="text">
     If you want to contact me, just send me an email to
     <a href="mailto: jmn8718@gmail.com">jmn8718@gmail.com</a>
-    or contact me at
+     or contact me at
   </p>
   <div class="icons_wrapper contact_icons">
     <a href="mailto: jmn8718@gmail.com" target="_blank">
-      <Icon data={envelope} scale="2" class="icon_item" />
-    </a>
+      <Icon pack="fa" name="envelope" size={40} /></a
+    >
     <a href="https://www.linkedin.com/in/jm8nav/" target="_blank">
-      <Icon data={linkedin} scale="2" class="icon_item" />
+      <Icon pack="fa" name="linkedin" size={40} />
     </a>
     <a href="https://medium.com/@jmn8718" target="_blank">
-      <Icon data={medium} scale="2" class="icon_item" />
+      <Icon pack="fa" name="medium" size={40} />
     </a>
     <a href="https://github.com/jmn8718" target="_blank">
-      <Icon data={github} scale="2" class="icon_item" />
+      <Icon pack="fa" name="github" size={40} />
     </a>
     <a href="https://gitlab.com/users/jmn8718" target="_blank">
-      <Icon data={gitlab} scale="2" class="icon_item" />
+      <Icon pack="fa" name="gitlab" size={40} />
     </a>
   </div>
 </Section>
@@ -45,6 +33,7 @@
     display: flex;
     justify-content: space-around;
     margin: 16px;
+    width: 600px;
   }
   .icons_wrapper a {
     margin: 0 8px;

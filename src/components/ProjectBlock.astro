@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+interface Props {
+  projectName: string;
+  link: string;
+  description: string;
+}
+
+const { projectName, link, description} = Astro.props;
+---
+
+<a href={link} target="_blank" class="link_wrapper">
+  <h4 class="project_title color_title">{projectName}</h4>
+  <Icon pack="fa" name="desktop" size={30} />
+</a>
+<span class="project_description">{description}</span>
+<div class="content">
+  <slot />
+</div>
+
+<style>
+  .project_title {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #0f27af;
+  }
+  .project_description {
+    font-style: italic;
+    font-size: 1.1em;
+  }
+  .content {
+    width: 100%;
+    text-align: left;
+    margin-top: 2rem;
+  }
+  .link_wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .link_wrapper .project_title {
+    margin-right: 16px;
+  }
+</style>

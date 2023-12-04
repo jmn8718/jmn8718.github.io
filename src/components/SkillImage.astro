@@ -1,0 +1,31 @@
+---
+interface Props {
+	text: string;
+  imagePath: string
+}
+
+const { imagePath, text } = Astro.props;
+---
+
+<style>
+  .skill-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .skill-image {
+    width: auto;
+    height: 64px;
+  }
+  .skill-text {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8px;
+  }
+</style>
+
+<div class="skill-wrapper">
+  <img class="skill-image" src={imagePath} alt={text} />
+  <span class="skill-text">{text}</span>
+</div>

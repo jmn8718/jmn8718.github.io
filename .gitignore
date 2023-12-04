@@ -9,5 +9,3 @@ npm-debug.log*
 
 # Apple stuff
 .DS_Store
-
-.parcel-cache

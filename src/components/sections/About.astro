@@ -1,18 +1,8 @@
-<script>
-  import Section from "./Section.svelte";
-  const props = {
-    id: "about",
-    title: "About me"
-  };
-</script>
+---
+import Section from "../Section.astro";
+---
 
-<style>
-  .block {
-    margin-bottom: 24px;
-  }
-</style>
-
-<Section {...props}>
+<Section title="about me">
   <div class="block">
     Hello, my name is Jose Miguel. I'm a Software Engineer working at Criptan remotely from South Korea.
     <br />
@@ -47,3 +37,12 @@
     <br />
   </div>
 </Section>
+
+<style>
+  .block {
+    text-align: left;
+  }
+  .block:not(:last-child) {
+    margin-bottom: 24px;
+  }
+</style>

@@ -1,37 +1,18 @@
 {
-  "name": "jmn8718.github.io",
-  "description": "Portfolio website",
-  "version": "0.1.0",
-  "license": "MIT",
-  "author": "Jose Navarro <jmn8718@gmail.com>",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html ",
-    "predeploy": "rm -rf dist && npm run build",
-    "deploy": "gh-pages -d dist -b master"
-  },
-  "devDependencies": {
-    "@parcel/config-default": "^2.8.3",
-    "@parcel/transformer-sass": "^2.8.3",
-    "gh-pages": "^2.2.0",
-    "parcel": "^2.8.3",
-    "parcel-transformer-svelte": "^1.2.3",
-    "sass": "^1.26.2",
-    "svelte": "^3.49.0"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "svelte-awesome": "^2.2.1"
-  },
-  "staticFiles": {
-    "staticPath": "src",
-    "watcherGlob": "**/*.png"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jmn8718/jmn8718.github.io"
-  },
-  "bugs": {
-    "url": "https://github.com/jmn8718/jmn8718.github.io"
+    "@astrojs/check": "^0.3.1",
+    "astro": "^3.6.0",
+    "astro-icon": "^0.8.1",
+    "typescript": "^5.3.2"
   }
 }

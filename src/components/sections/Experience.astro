@@ -1,14 +1,11 @@
-<script>
-  import Section from "./Section.svelte";
-  import WrokBlock from "./WorkBlock.svelte";
-  const props = {
-    id: "experience",
-    title: "Experience",
-  };
-</script>
+---
+import Section from "../Section.astro";
+import WorkBlock from "../WorkBlock.astro";
 
-<Section {...props}>
-  <WrokBlock
+---
+
+<Section title="experience" anchor="experience">
+  <WorkBlock
     companyName="Criptan"
     period="January 2021 - Present"
     location="Remote - Seoul 🇰🇷"
@@ -19,8 +16,8 @@
     We utilize both SQL and DynamoDB for our database needs, and we leverage events from the database records to perform other operations.
     <br />
     As a key member of the team, I am responsible for developing core projects from the ground up and spearheading the refactor of our core business logic from PHP to TypeScript. I also collaborate closely with our operations and product owners to carefully review and refine development requirements, ensuring our solutions are aligned with our clients' needs.
-  </WrokBlock>
-  <WrokBlock
+  </WorkBlock>
+  <WorkBlock
     companyName="Threelabs"
     period="August 2019 - January 2021"
     location="Seoul 🇰🇷"
@@ -36,8 +33,8 @@
     <br />
     Overall, my role involved ensuring the smooth and efficient functioning of the backend services, and continually improving the performance and functionality of the application.
     <br />
-  </WrokBlock>
-  <WrokBlock
+  </WorkBlock>
+  <WorkBlock
     companyName="Auth0"
     link="https://auth0.com/"
     period="September 2018 - July 2019"
@@ -49,8 +46,8 @@
     To help my team in the future, I wrote internal posts that documented my thought process and actions, providing a valuable resource for my colleagues. Additionally, as our team was remote-based, I occasionally served as the "concierge," helping other members of Auth0 when they needed assistance and managing my time effectively during internal incidents.
     <br />
     Subsequently, I transitioned to the Protocols and Sessions core team, where I was part of a team responsible for working on various protocols integrated into the system and managing sessions. This role involved a deep understanding of the technical architecture and how different protocols interacted with one another. Overall, my experience at Auth0 enabled me to hone my analytical skills and work collaboratively with a diverse team to tackle complex engineering challenges.
-  </WrokBlock>
-  <WrokBlock
+  </WorkBlock>
+  <WorkBlock
     companyName="Bitholla"
     link="https://bitholla.com/"
     period="July 2017 - June 2018"
@@ -62,8 +59,8 @@
     My primary responsibilities included designing the crypto exchange, developing APIs using Node.js, Express, and Swagger, and deploying the platform on AWS and Docker. Additionally, I worked with Postgresql, Redis, and MongoDB to manage databases and implemented socket.io to ensure seamless websockets connectivity. Lastly, I was responsible for developing SPAs using React and websockets.
     <br />
     Overall, my experience in leading the development of a cryptocurrency platform allowed me to expand my skill set and gain valuable experience in designing, developing, and deploying live systems with cutting-edge technologies.
-  </WrokBlock>
-  <WrokBlock
+  </WorkBlock>
+  <WorkBlock
     companyName="Famoco"
     link="https://www.famoco.com/"
     location="Brussels 🇧🇪"
@@ -71,8 +68,8 @@
     role="Fullstack developer"
   >
     I led the development of a Single Page Application (SPA) using React, Redux, and Redux-Sagas. The project involved porting an existing Django and Bootstrap application to React while adhering to Material Design guidelines and consuming the API developed by our backend team. Working closely with the Backend team, we utilized Agile methodologies for development. I also developed Android applications (as our devices used Android) using React Native, and web applications with React to test future features for our main app. For these projects, I developed servers with Node.js, implementing either a REST API or a GraphQL server. To facilitate deployment, I utilized Docker.
-  </WrokBlock>
-  <WrokBlock
+  </WorkBlock>
+  <WorkBlock
     companyName="Beeva"
     period="May 2015 - July 2016"
     location="Madrid 🇪🇸"
@@ -83,8 +80,8 @@
     Apart from the frontend project, I also worked on some small projects in NodeJS. As we provided access to third-party APIs, we had a RAML documentation from other teams, and my task was to transform the RAML into an HTML+CSS+JS that we published on our site. I developed the server that handled the transformation, developed the templates and styles for the project, and reviewed the RAML. This side project helped me understand the importance of good API documentation in development.
     <br />
     After the beta release, we switched from Angular to Polymer and moved away from Liferay to a REST API for our SPA app. In this second stage, I joined the backend team, where I developed services for the internal API using Java and Spring.
-  </WrokBlock>
-  <WrokBlock
+  </WorkBlock>
+  <WorkBlock
     companyName="Cloudroom"
     period="February 2015 - May 2015"
     location="Madrid 🇪🇸"
@@ -95,5 +92,5 @@
     For the backend, I developed a REST API using nodejs and coffeescript. We used a graph database to handle the social approach of resources with many links to other entities. For resources that required more restricted requirements, we used a SQL database (MariaDB). We used mocha and chai for testing purposes. On the frontend side, we developed the frontend applications that consumed the services we created. We used angularjs version 1.
     <br />
     This project provided me with my first real-world experience in a web project, and I learned a great deal about the software development lifecycle.
-  </WrokBlock>
+  </WorkBlock>
 </Section>

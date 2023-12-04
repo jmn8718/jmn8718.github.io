@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon";
+import Section from "../Section.astro";
+import SkillImage from "../SkillImage.astro";
+---
+
+<Section title="skills">
+  <div class="wrapper">
+    <SkillImage text="NodeJS" imagePath="public/images/node.png" />
+    <SkillImage text="ReactJS" imagePath="public/images/react.png" />
+    <SkillImage text="Javascript" imagePath="public/images/js.png" />
+    <SkillImage text="HTML" imagePath="public/images/html5.png" />
+    <SkillImage text="CSS" imagePath="public/images/css.png" />
+    <SkillImage text="Docker" imagePath="public/images/node.png" />
+    <SkillImage text="MongoDB" imagePath="public/images/docker.png" />
+    <SkillImage text="PostgreSQL" imagePath="public/images/postgre.png" />
+    <SkillImage text="Redis" imagePath="public/images/redis.png" />
+    <SkillImage text="Github" imagePath="public/images/github.png" />
+    <SkillImage text="AWS" imagePath="public/images/aws.png" />
+  </div>
+</Section>
+
+<style>
+  .wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 2rem;
+  }
+</style>
