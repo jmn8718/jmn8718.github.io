@@ -4,17 +4,17 @@ export interface InvestmentData {
 }
 
 export interface Investment {
-  currency: Currency | string;
+  currency: Currency;
   dateEnd: string;
   dateFirstReward: string;
-  status: InvestmentStatus | string;
+  status: InvestmentStatus;
   apy: string;
   timesRewarded: string;
   apyGross: string;
   renewedFrom?: string;
   userId: string;
   id: string;
-  product: Product | string;
+  product: Product;
   autorenewal: boolean;
   roi: string;
   roiGross: string;

@@ -43,11 +43,11 @@ export const baseAmountToCurrencyAmount = (
   return number.div(conversion).toFixed(decimals);
 };
 
-export const formatCurrencyAmount = (amount: string) => {
+export const formatCurrencyAmount = (amount: number) => {
   return new Intl.NumberFormat("es-ES", {
     style: "currency",
     currency: "EUR",
-  }).format(parseFloat(amount));
+  }).format(amount);
 };
 export const formatAmount = (
   amount: string,
@@ -99,7 +99,7 @@ export const calculateAccumulatedRewards = (
 ) => {
   const accumulatedRewards = data.reduce(
     (currentAccumulatedData, currentInvestment) => {
-      const currentInvestmentCurrency = currentInvestment.currency as Currency;
+      const currentInvestmentCurrency = currentInvestment.currency;
       const currentAccumulatedReward =
         currentAccumulatedData[currentInvestmentCurrency];
       return {
@@ -118,18 +118,14 @@ export const calculateAccumulatedRewards = (
   );
   return Object.keys(prices).reduce(
     (acc, currentCurrency) => {
-      const currencyRewards =
-        accumulatedRewards[currentCurrency as Currency] ?? "0";
+      const currencyRewards = accumulatedRewards[currentCurrency] ?? "0";
       return {
         ...acc,
         [currentCurrency]: {
           rewards: currencyRewards,
           currencyRewards: currencyToPriceCurrency(
-            baseAmountToCurrencyAmount(
-              currencyRewards,
-              currentCurrency as Currency,
-            ),
-            prices[currentCurrency as Currency],
+            baseAmountToCurrencyAmount(currencyRewards, currentCurrency),
+            prices[currentCurrency],
           ),
         },
       };
@@ -161,7 +157,7 @@ export const calculateAccumulatedInvestedAmount = (
 ) => {
   const accumulatedInvestments = data.reduce(
     (currentAccumulatedData, currentInvestment) => {
-      const currentInvestmentCurrency = currentInvestment.currency as Currency;
+      const currentInvestmentCurrency = currentInvestment.currency;
       const currentAccumulatedReward =
         currentAccumulatedData[currentInvestmentCurrency];
       return {
@@ -180,18 +176,14 @@ export const calculateAccumulatedInvestedAmount = (
   );
   return Object.keys(prices).reduce(
     (acc, currentCurrency) => {
-      const currencyRewards =
-        accumulatedInvestments[currentCurrency as Currency] ?? "0";
+      const currencyRewards = accumulatedInvestments[currentCurrency] ?? "0";
       return {
         ...acc,
         [currentCurrency]: {
           rewards: currencyRewards,
           currencyRewards: currencyToPriceCurrency(
-            baseAmountToCurrencyAmount(
-              currencyRewards,
-              currentCurrency as Currency,
-            ),
-            prices[currentCurrency as Currency],
+            baseAmountToCurrencyAmount(currencyRewards, currentCurrency),
+            prices[currentCurrency],
           ),
         },
       };

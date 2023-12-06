@@ -1,5 +1,5 @@
 ---
-import { Currency } from "../../types";
+import { Currency, type RewardsData } from "../../types";
 import { formatAmount, formatCurrencyAmount } from "../../utils";
 interface Props {
   rewards: RewardsData;
@@ -13,7 +13,7 @@ const { rewards } = Astro.props;
     <div class="item">
       <span class="currency-name">{currency}</span>
       <span class="currency-value">{formatAmount(rewards[currency].rewards, currency, true, currency !== Currency.Eur ? 4 : undefined)}</span>
-      <span class="currency-value">{formatCurrencyAmount(rewards[currency].currencyRewards)}</span>
+      <span class="currency-value">{formatCurrencyAmount(parseFloat(rewards[currency].currencyRewards))}</span>
     </div>
   ))}
 </div>

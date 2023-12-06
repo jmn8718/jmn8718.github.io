@@ -3,7 +3,7 @@ import Layout from "../layouts/MainLayout.astro";
 import List from "../components/earn/List.astro";
 import Prices from "../components/earn/Prices.astro";
 import Rewards from "../components/earn/Rewards.astro";
-import { stagingData, productionData } from "../data/earn_investments";
+import { productionData } from "../data/earn_investments";
 import { InvestmentStatus } from "../types";
 import {
   fetchPrices,
@@ -13,7 +13,6 @@ import {
 } from "../utils";
 
 const prices = await fetchPrices();
-console.log(prices);
 const checkStatusCompleted = (status: string) =>
   status === InvestmentStatus.Completed || status === InvestmentStatus.Expired;
 const completedInvestments = productionData.data.filter(({ status }) =>
@@ -28,8 +27,6 @@ const investments = calculateAccumulatedInvestedAmount(
   ongoingInvestments,
   prices
 );
-console.log(rewards)
-console.log(investments)
 const totalRewards = Object.values(rewards).reduce((acc, current) => acc + parseFloat(current.currencyRewards), 0)
 const totalInvestments = Object.values(investments).reduce((acc, current) => acc + parseFloat(current.currencyRewards), 0)
 ---
