@@ -1,0 +1,39 @@
+---
+import { Currency } from "../../types";
+import { formatAmount, formatCurrencyAmount } from "../../utils";
+interface Props {
+  rewards: RewardsData;
+}
+
+const { rewards } = Astro.props;
+---
+
+<div class="wrapper">
+  {Object.values(Currency).map((currency) => (
+    <div class="item">
+      <span class="currency-name">{currency}</span>
+      <span class="currency-value">{formatAmount(rewards[currency].rewards, currency, true, currency !== Currency.Eur ? 4 : undefined)}</span>
+      <span class="currency-value">{formatCurrencyAmount(rewards[currency].currencyRewards)}</span>
+    </div>
+  ))}
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    gap: 0.4rem;
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+</style>

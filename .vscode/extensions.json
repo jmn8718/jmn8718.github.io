@@ -3,5 +3,9 @@
     "astro-build.astro-vscode",
     "github.vscode-github-actions"
   ],
-  "unwantedRecommendations": []
+  "unwantedRecommendations": [],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

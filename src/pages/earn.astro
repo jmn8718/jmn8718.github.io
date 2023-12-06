@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/MainLayout.astro";
+import List from "../components/earn/List.astro";
+import Prices from "../components/earn/Prices.astro";
+import Rewards from "../components/earn/Rewards.astro";
+import { stagingData, productionData } from "../data/earn_investments";
+import { InvestmentStatus } from "../types";
+import {
+  fetchPrices,
+  formatCurrencyAmount,
+  calculateAccumulatedInvestedAmount,
+  calculateAccumulatedRewards,
+} from "../utils";
+
+const prices = await fetchPrices();
+console.log(prices);
+const checkStatusCompleted = (status: string) =>
+  status === InvestmentStatus.Completed || status === InvestmentStatus.Expired;
+const completedInvestments = productionData.data.filter(({ status }) =>
+  checkStatusCompleted(status)
+);
+const ongoingInvestments = productionData.data
+  .filter(({ status }) => !checkStatusCompleted(status))
+  .sort((a, b) => (new Date(a.dateEnd) > new Date(b.dateEnd) ? 1 : -1));
+
+const rewards = calculateAccumulatedRewards(ongoingInvestments, prices);
+const investments = calculateAccumulatedInvestedAmount(
+  ongoingInvestments,
+  prices
+);
+console.log(rewards)
+console.log(investments)
+const totalRewards = Object.values(rewards).reduce((acc, current) => acc + parseFloat(current.currencyRewards), 0)
+const totalInvestments = Object.values(investments).reduce((acc, current) => acc + parseFloat(current.currencyRewards), 0)
+---
+
+<Layout title="Earn Details">
+  <div class="row">
+    <Prices prices={prices} />
+    <div class="column">
+      <span class="title">Weekly Rewards ({formatCurrencyAmount(totalRewards)})</span>
+      <Rewards rewards={rewards} />
+      <span class="title">Invested ({formatCurrencyAmount(totalInvestments)})</span>
+      <Rewards rewards={investments} />
+    </div>
+  </div>
+  <List data={ongoingInvestments} title="Ongoing" />
+  <List data={completedInvestments} title="Completed" />
+</Layout>
+
+<style>
+  .row {
+    display: flex;
+    column-gap: 1rem;
+    justify-content: center;
+  }
+  .column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+</style>

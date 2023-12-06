@@ -1,0 +1,68 @@
+---
+import { InvestmentStatus, Investment, MarketPrices } from "../../types";
+import { formatAmount, formatDate } from "../../utils";
+interface Props {
+  data: Investment[];
+  title: string;
+}
+
+const { data, title } = Astro.props;
+---
+
+<div class="wrapper">
+  <>
+  <div class="title">INVESTMENTS {title}: {data.length}</div>
+  <div class="list-wrapper">
+    {
+      data.map((investment) => (
+        <div class="investment-wrapper">
+          <div>
+            <div>{investment.id} ({investment.product})</div>
+            <div>{investment.currency}</div>
+          </div>
+          <div>
+            <div>Amount: {formatAmount(investment.amount, investment.currency, true)}</div>
+            <div>Weekly Reward Amount: {formatAmount(investment.weeklyReward, investment.currency, true)}</div>
+          </div>
+          <div>
+            <div>{investment.status === InvestmentStatus.Completed || investment.status === InvestmentStatus.Expired ? investment.status : <span>{investment.timesRewarded}/{investment.numberOfRewards}</span>}</div>
+            <div>{formatDate(investment.dateStart)} / {formatDate(investment.dateEnd)}</div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+  }
+  .title {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+  .list-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .investment-wrapper {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .investment-wrapper div{
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
