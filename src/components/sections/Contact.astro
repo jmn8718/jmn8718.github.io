@@ -32,8 +32,9 @@ import Section from "../Section.astro";
   .icons_wrapper {
     display: flex;
     justify-content: space-around;
+    gap: 2rem;
     margin: 16px;
-    width: 600px;
+    width: fit-content;
   }
   .icons_wrapper a {
     margin: 0 8px;
@@ -41,5 +42,11 @@ import Section from "../Section.astro";
   .text {
     text-align: center;
     width: 100%;
+  }
+
+  @media screen and (max-width: 640px) {
+    .icons_wrapper {
+      gap: 0.5rem;
+    }
   }
 </style>

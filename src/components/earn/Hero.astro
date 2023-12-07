@@ -21,6 +21,7 @@ const { data } = Astro.props;
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-items: center;
     padding-top: 2rem;
   }
   .hero-title {
@@ -62,5 +63,27 @@ const { data } = Astro.props;
     border: 1px solid grey;
     border-radius: 1rem;
     padding: 0.3rem 0.5rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    .hero-row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .prices-wrapper, .rewards-wrapper {
+      padding: 1rem 0 2rem;
+      max-width: 100%;
+      width: 100%;
+    }
+    .rewards-item, .prices-item {
+      width: 100%;
+    }
+
+    .prices-wrapper {
+      margin: 0 auto;
+      max-width: 80%;
+    }
   }
 </style>
