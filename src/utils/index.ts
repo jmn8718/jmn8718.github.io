@@ -2,7 +2,7 @@ import { format as dateFns } from "date-fns";
 import BigNumber from "bignumber.js";
 import {
   Currency,
-  MarketPrices,
+  type MarketPrices,
   type Investment,
   type RewardsData,
 } from "../types/index";
