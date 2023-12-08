@@ -1,20 +1,21 @@
 ---
 interface Props {
-	title: string;
-	anchor?: string;
+  title: string;
+  anchor?: string;
 }
 
 const { title, anchor } = Astro.props;
 ---
+
 <div class="section_container" id={anchor}>
-	<h2>{title}</h2>
-	<div class="section_content">
-		<slot />
-	</div>
+  <h2>{title}</h2>
+  <div class="section_content">
+    <slot />
+  </div>
 </div>
 <style>
-	h2 {
-		margin: 0 0 15px 0;
+  h2 {
+    margin: 0 0 15px 0;
     padding: 0;
     font-size: 2.25em;
     font-weight: 300;
@@ -23,15 +24,15 @@ const { title, anchor } = Astro.props;
     display: block;
     text-align: center;
     letter-spacing: 0.1em;
-	}
+  }
 
-	.section_container {
-		width: 100%;
+  .section_container {
+    width: 100%;
     padding: 16px;
     padding-top: 72px;
-		margin-bottom: 24px;
-	}
-	.section_content {
+    margin-bottom: 24px;
+  }
+  .section_content {
     padding-top: 8px;
     margin: 0 auto;
     display: flex;
@@ -45,6 +46,9 @@ const { title, anchor } = Astro.props;
   @media only screen and (max-width: 768px) {
     .section_content {
       max-width: 90%;
+    }
+    .section_container {
+      padding: 0;
     }
   }
 </style>
