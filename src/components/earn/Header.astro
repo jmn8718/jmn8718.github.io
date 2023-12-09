@@ -1,0 +1,62 @@
+<header>
+    <div class="nav-wrapper">
+      <ul>
+        <li>
+          <a href="/earn">DATA</a>
+        </li>
+        <li>
+          <a href="/earn_investments">INVESTMENTS</a>
+        </li>
+        <li>
+          <a href="/earn_accounts">ACCOUNTS</a>
+        </li>
+      </ul>
+    </div>
+</header>
+
+<style>
+  header {
+    width: 100vw;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+  }
+  li a {
+    padding: 11px;
+  }
+  a {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+  }
+
+  .nav-wrapper {
+    margin-right: 16px;
+  }
+
+  @media screen and (max-width: 640px) {
+    li a {
+      padding: 11px 4px;
+    }
+  }
+</style>
+<style is:global>
+  main, .header-gap {
+    padding-top: var(--header-height);
+  }
+</style>

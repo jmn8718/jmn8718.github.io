@@ -128,7 +128,6 @@ function Hero({
       setAccountsHeroData(accountRewards);
     }
   }, [prices]);
-  console.log(accountsHeroData);
   return (
     <div className="hero-wrapper">
       {prices ? (
