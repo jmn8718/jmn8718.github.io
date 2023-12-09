@@ -1,0 +1,58 @@
+{
+  "BTC": {
+    "interestRate": "0.00502",
+    "interestRateGross": "0.0062",
+    "weeklyPercentage": "0.00009602",
+    "weeklyPercentageGross": "0.00011854",
+    "withdrawalRates": {
+      "maxDaysForVariableFee": 23,
+      "minLiquidityPeriod": 2,
+      "variableFee": 0.002,
+      "fixedFee": 0,
+      "minFees": [0.000003, 0.000002, 0.000001]
+    },
+    "withdrawalDailyLimit": "1"
+  },
+  "ETH": {
+    "interestRate": "0.01778",
+    "interestRateGross": "0.022",
+    "weeklyPercentage": "0.00033812",
+    "weeklyPercentageGross": "0.00041743",
+    "withdrawalRates": {
+      "maxDaysForVariableFee": 23,
+      "minLiquidityPeriod": 2,
+      "variableFee": 0.007,
+      "fixedFee": 0,
+      "minFees": [0.000003, 0.000002, 0.000001]
+    },
+    "withdrawalDailyLimit": "15"
+  },
+  "EUR": {
+    "interestRate": "0.02504",
+    "interestRateGross": "0.031",
+    "weeklyPercentage": "0.00047439",
+    "weeklyPercentageGross": "0.00058566",
+    "withdrawalRates": {
+      "maxDaysForVariableFee": 23,
+      "minLiquidityPeriod": 2,
+      "variableFee": 0.01,
+      "fixedFee": 0,
+      "minFees": [0.03, 0.02, 0.01]
+    },
+    "withdrawalDailyLimit": "25000"
+  },
+  "USDC": {
+    "interestRate": "0.04994",
+    "interestRateGross": "0.062",
+    "weeklyPercentage": "0.00093499",
+    "weeklyPercentageGross": "0.0011543",
+    "withdrawalRates": {
+      "maxDaysForVariableFee": 23,
+      "minLiquidityPeriod": 2,
+      "variableFee": 0.02,
+      "fixedFee": 0,
+      "minFees": [0.03, 0.02, 0.01]
+    },
+    "withdrawalDailyLimit": "25000"
+  }
+}

@@ -1,18 +1,19 @@
 ---
 import Layout from "../layouts/MainLayout.astro";
 import EarnHero from "../components/earn/Hero.astro";
-import { productionData } from "../data/earn_investments";
+import { accounts, investments, parameters } from "../data";
 import { InvestmentStatus } from "../types";
 
 const checkStatusCompleted = (status: string) =>
   status === InvestmentStatus.Completed || status === InvestmentStatus.Expired;
 
-const ongoingInvestments = productionData.data
+const ongoingInvestments = investments.data
   .filter(({ status }) => !checkStatusCompleted(status))
   .sort((a, b) => (new Date(a.dateEnd) > new Date(b.dateEnd) ? 1 : -1));
 ---
 
 <Layout title="Earn Details">
-  <a href="/earn_list">INVESTMENTS</a>
-  <EarnHero data={ongoingInvestments} />
+  <a href="/earn_investments">INVESTMENTS</a>
+  <a href="/earn_accounts">ACCOUNTS</a>
+  <EarnHero investments={ongoingInvestments} accounts={accounts.data} accountParameters={parameters} />
 </Layout>

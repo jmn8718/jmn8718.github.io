@@ -1,0 +1,64 @@
+---
+import BigNumber from "bignumber.js";
+import { type Account, type AccountParameters } from "../../types";
+import { formatAmount } from "../../utils";
+interface Props {
+  data: Account[];
+  parameters: AccountParameters;
+}
+
+const { data, parameters } = Astro.props;
+---
+
+<div class="wrapper">
+  <>
+  <div class="title">Accounts: {data.length}</div>
+  <div class="list-wrapper">
+    {
+      data.map((account) => (
+        <div class="investment-wrapper">
+          <div>
+            <div>{account.id} ({account.currency})</div>
+          </div>
+          <div>
+            <div>Amount: {formatAmount(account.activeAmount, account.currency, true)}</div>
+            <div>Weekly Reward Amount: {formatAmount(new BigNumber(account.activeAmount).multipliedBy(parameters[account.currency].weeklyPercentage).toString(), account.currency, true)}</div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+  }
+  .title {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+  .list-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .investment-wrapper {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .investment-wrapper div{
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

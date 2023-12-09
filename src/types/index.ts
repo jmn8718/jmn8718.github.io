@@ -58,3 +58,52 @@ export type RewardsData = Record<
     currencyRewards: string;
   }
 >;
+
+export type AccountsRewardsData = Record<
+  Currency,
+  {
+    amount: string;
+    reward: string;
+    currencyRewards: string;
+  }
+> & {
+  totalInvested: number;
+  totalRewards: number;
+};
+
+export interface AccountsData {
+  count: number;
+  data: Account[];
+}
+
+export interface Account {
+  currency: Currency;
+  activeAmount: string;
+  blockedAmount: string;
+  status: {
+    status: string;
+  };
+  allowedDestinations: string[];
+  target: string;
+  userId: string;
+  accruedInterest: string;
+  pendingWithdrawAmount: string;
+  id: string;
+}
+
+export type AccountParameters = Record<Currency, AccountCurrencyParameters>;
+
+export interface AccountCurrencyParameters {
+  interestRate: string;
+  interestRateGross: string;
+  weeklyPercentage: string;
+  weeklyPercentageGross: string;
+  withdrawalRates: {
+    maxDaysForVariableFee: number;
+    minLiquidityPeriod: number;
+    variableFee: number;
+    fixedFee: number;
+    minFees: number[];
+  };
+  withdrawalDailyLimit: string;
+}

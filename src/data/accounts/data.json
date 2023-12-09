@@ -1,0 +1,61 @@
+{
+  "count": 4,
+  "data": [
+    {
+      "currency": "ETH",
+      "activeAmount": "130926575832010369",
+      "blockedAmount": "0",
+      "status": {
+        "status": "ACTIVE"
+      },
+      "allowedDestinations": ["CARD"],
+      "target": "EARN",
+      "userId": "1608",
+      "accruedInterest": "480498094638839",
+      "pendingWithdrawAmount": "0",
+      "id": "42c5058c-13b5-5c87-9f14-3ef5041b1103"
+    },
+    {
+      "currency": "EUR",
+      "activeAmount": "8588",
+      "blockedAmount": "0",
+      "status": {
+        "status": "ACTIVE"
+      },
+      "allowedDestinations": ["CARD"],
+      "target": "EARN",
+      "userId": "1608",
+      "accruedInterest": "16",
+      "pendingWithdrawAmount": "8588",
+      "id": "7cc136e4-acfe-5399-b5b3-15e479af2bb5"
+    },
+    {
+      "currency": "BTC",
+      "activeAmount": "0",
+      "blockedAmount": "0",
+      "status": {
+        "status": "ACTIVE"
+      },
+      "allowedDestinations": ["CARD"],
+      "target": "EARN",
+      "userId": "1608",
+      "accruedInterest": "0",
+      "pendingWithdrawAmount": "0",
+      "id": "967ce1d5-cba5-5b4c-8ed4-ab452dc5e030"
+    },
+    {
+      "currency": "USDC",
+      "activeAmount": "2509612275",
+      "blockedAmount": "0",
+      "status": {
+        "status": "ACTIVE"
+      },
+      "allowedDestinations": ["CARD"],
+      "target": "EARN",
+      "userId": "1608",
+      "accruedInterest": "52701274",
+      "pendingWithdrawAmount": "0",
+      "id": "fa5ca531-e11b-5dcc-8050-2bea3f5965ad"
+    }
+  ]
+}

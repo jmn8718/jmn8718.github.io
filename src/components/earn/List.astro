@@ -25,7 +25,7 @@ const { data, title } = Astro.props;
             <div>Weekly Reward Amount: {formatAmount(investment.weeklyReward, investment.currency, true)}</div>
           </div>
           <div>
-            <div>{investment.status === InvestmentStatus.Completed || investment.status === InvestmentStatus.Expired ? investment.status : <span>{investment.timesRewarded}/{investment.numberOfRewards}</span>}</div>
+            <div>{investment.status === InvestmentStatus.Completed || investment.status === InvestmentStatus.Expired ? investment.status : <span>{investment.timesRewarded}/{investment.numberOfRewards}<span class="pl-4">{investment.autorenewal ? 'O' : 'X'}</span></span>}</div>
             <div>{formatDate(investment.dateStart)} / {formatDate(investment.dateEnd)}</div>
           </div>
         </div>
@@ -64,5 +64,9 @@ const { data, title } = Astro.props;
   .investment-wrapper div{
     display: flex;
     justify-content: space-between;
+  }
+
+  .pl-4 {
+    padding-left: 1rem;
   }
 </style>

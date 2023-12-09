@@ -1,15 +1,17 @@
 ---
-import type { Investment } from "../../types";
+import type { Account, AccountParameters, Investment } from "../../types";
 import HeroComponent from "./Hero.tsx";
 
 interface Props {
-  data: Investment[];
+  investments: Investment[];
+  accounts: Account[];
+  accountParameters: AccountParameters;
 }
 
-const { data } = Astro.props;
+const { investments, accounts, accountParameters } = Astro.props;
 ---
 
-<HeroComponent client:only="react" data={data} />
+<HeroComponent client:only="react" investments={investments} accounts={accounts} accountParameters={accountParameters} />
 
 <style is:global>
   .hero-row {

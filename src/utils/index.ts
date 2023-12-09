@@ -5,6 +5,9 @@ import {
   type MarketPrices,
   type Investment,
   type RewardsData,
+  type Account,
+  type AccountParameters,
+  type AccountsRewardsData,
 } from "../types/index";
 
 const getDecimals = (currency: Currency) => {
@@ -211,3 +214,70 @@ export const calculateAccumulatedInvestedAmount = (
 
 export const currencyToPriceCurrency = (amount: string, price: string) =>
   new BigNumber(amount).multipliedBy(price).toString();
+
+export const calculateAccumulatedAccountRewards = (
+  data: Account[],
+  parameters: AccountParameters,
+  prices: MarketPrices,
+): AccountsRewardsData => {
+  return Object.entries(prices).reduce(
+    (acc, [currentCurrency, currentPrice]) => {
+      const currentCurrencyAccount = data.find(
+        ({ currency }) => currency === currentCurrency,
+      );
+      if (!currentCurrencyAccount) return acc;
+      const amount = currentCurrencyAccount.activeAmount ?? "0";
+      const reward = new BigNumber(amount)
+        .multipliedBy(
+          parameters[currentCurrencyAccount.currency].weeklyPercentage,
+        )
+        .toString();
+      const currencyRewards = currencyToPriceCurrency(
+        baseAmountToCurrencyAmount(reward, currentCurrencyAccount.currency),
+        currentPrice,
+      );
+      const currencyAmount = currencyToPriceCurrency(
+        baseAmountToCurrencyAmount(amount, currentCurrencyAccount.currency),
+        currentPrice,
+      );
+      return {
+        ...acc,
+        totalInvested: new BigNumber(currencyAmount)
+          .plus(acc.totalInvested)
+          .toNumber(),
+        totalRewards: new BigNumber(currencyRewards)
+          .plus(acc.totalRewards)
+          .toNumber(),
+        [currentCurrency]: {
+          amount,
+          reward,
+          currencyRewards,
+        },
+      };
+    },
+    {
+      totalInvested: 0,
+      totalRewards: 0,
+      [Currency.Btc]: {
+        amount: "0",
+        reward: "0",
+        currencyRewards: "0",
+      },
+      [Currency.Eth]: {
+        amount: "0",
+        reward: "0",
+        currencyRewards: "0",
+      },
+      [Currency.Eur]: {
+        amount: "0",
+        reward: "0",
+        currencyRewards: "0",
+      },
+      [Currency.Usdc]: {
+        amount: "0",
+        reward: "0",
+        currencyRewards: "0",
+      },
+    } as AccountsRewardsData,
+  );
+};

@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/MainLayout.astro";
+import AccountsList from "../components/earn/AccountsList.astro";
+import { accounts, parameters } from "../data";
+---
+
+<Layout title="Earn List">
+  <a href="/earn">DATA</a>
+  <AccountsList data={accounts.data}  parameters={parameters}/>
+</Layout>
