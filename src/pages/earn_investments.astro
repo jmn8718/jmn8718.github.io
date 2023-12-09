@@ -1,7 +1,6 @@
 ---
-import Layout from "../layouts/MainLayout.astro";
+import Layout from "../layouts/EarnLayout.astro";
 import List from "../components/earn/List.astro";
-import Header from "../components/earn/Header.astro";
 import { investments } from "../data";
 import { InvestmentStatus } from "../types";
 
@@ -16,7 +15,6 @@ const ongoingInvestments = investments.data
 ---
 
 <Layout title="Earn List">
-  <Header />
   <List data={ongoingInvestments} title="Ongoing" />
   <List data={completedInvestments} title="Completed" />
 </Layout>

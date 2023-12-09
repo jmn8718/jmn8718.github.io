@@ -1,0 +1,27 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/earn/Header.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <Header />
+  <div class="header-gap wrapper-width-overflow">
+    <slot />
+  </div>
+</BaseLayout>
+
+<style>
+  .wrapper-width-overflow {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+</style>

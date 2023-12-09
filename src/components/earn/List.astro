@@ -1,5 +1,5 @@
 ---
-import { InvestmentStatus, type Investment } from "../../types";
+import { InvestmentStatus, type Investment, Currency } from "../../types";
 import { formatAmount, formatDate } from "../../utils";
 interface Props {
   data: Investment[];
@@ -10,30 +10,48 @@ const { data, title } = Astro.props;
 ---
 
 <div class="wrapper">
-  <>
-  <div class="title">INVESTMENTS {title}: {data.length}</div>
+  <div class="title">{title}: {data.length}</div>
   <div class="list-wrapper">
     {
       data.map((investment) => (
         <div class="investment-wrapper">
           <div>
-            <div>{investment.id} ({investment.product})</div>
-            <div>{investment.currency}</div>
+            {investment.currency} <span>
+              {investment.product}
+            </span>
           </div>
-          <div>
-            <div>Amount: {formatAmount(investment.amount, investment.currency, true)}</div>
-            <div>Weekly Reward Amount: {formatAmount(investment.weeklyReward, investment.currency, true)}</div>
+          <div class="row-data">
+            <div>
+              Amount:{" "}
+              <span>{formatAmount(investment.amount, investment.currency, true, investment.currency === Currency.Eth ? 8 : undefined)}</span>
+            </div>
+            <div>
+              Reward:{" "}
+              <span>{formatAmount(investment.weeklyReward, investment.currency, true, investment.currency === Currency.Eth ? 8 : undefined)}</span>
+            </div>
           </div>
-          <div>
-            <div>{investment.status === InvestmentStatus.Completed || investment.status === InvestmentStatus.Expired ? investment.status : <span>{investment.timesRewarded}/{investment.numberOfRewards}<span class="pl-4">{investment.autorenewal ? 'O' : 'X'}</span></span>}</div>
-            <div>{formatDate(investment.dateStart)} / {formatDate(investment.dateEnd)}</div>
+          <div class="row-data">
+            <div>
+              {investment.status === InvestmentStatus.Completed ||
+              investment.status === InvestmentStatus.Expired ? (
+                investment.status
+              ) : (
+                <span>
+                  {investment.timesRewarded}/{investment.numberOfRewards}
+                  <span class="pl-4">{investment.autorenewal ? "O" : "X"}</span>
+                </span>
+              )}
+            </div>
+            <div>
+              {formatDate(investment.dateStart)} /{" "}
+              {formatDate(investment.dateEnd)}
+            </div>
           </div>
         </div>
       ))
     }
   </div>
 </div>
-
 <style>
   .wrapper {
     display: flex;
@@ -42,7 +60,8 @@ const { data, title } = Astro.props;
     padding: 2rem;
     margin: 0 auto;
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
+    font-size: 1.25rem;
   }
   .title {
     margin-bottom: 2rem;
@@ -61,12 +80,40 @@ const { data, title } = Astro.props;
     flex-direction: column;
     gap: 0.5rem;
   }
-  .investment-wrapper div{
+  .investment-wrapper div {
     display: flex;
     justify-content: space-between;
   }
 
   .pl-4 {
     padding-left: 1rem;
+  }
+
+  .row-data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .row-data div {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .row-data {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .wrapper {
+      max-width: calc(100% - 2rem);
+      flex: 1;
+      margin: 0 auto;
+      padding: 0;
+      padding-top: 1rem;
+    }
+    .list-wrapper {
+      width: 100%;
+    }
   }
 </style>

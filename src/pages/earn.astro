@@ -1,7 +1,6 @@
 ---
-import Layout from "../layouts/MainLayout.astro";
+import Layout from "../layouts/EarnLayout.astro";
 import EarnHero from "../components/earn/Hero.astro";
-import Header from "../components/earn/Header.astro";
 import { accounts, investments, parameters } from "../data";
 import { InvestmentStatus } from "../types";
 
@@ -14,6 +13,5 @@ const ongoingInvestments = investments.data
 ---
 
 <Layout title="Earn Details">
-  <Header />
   <EarnHero investments={ongoingInvestments} accounts={accounts.data} accountParameters={parameters} />
 </Layout>

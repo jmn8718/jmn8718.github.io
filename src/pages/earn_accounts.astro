@@ -1,11 +1,9 @@
 ---
-import Layout from "../layouts/MainLayout.astro";
+import Layout from "../layouts/EarnLayout.astro";
 import AccountsList from "../components/earn/AccountsList.astro";
-import Header from "../components/earn/Header.astro";
 import { accounts, parameters } from "../data";
 ---
 
 <Layout title="Earn List">
-  <Header />
   <AccountsList data={accounts.data}  parameters={parameters}/>
 </Layout>
