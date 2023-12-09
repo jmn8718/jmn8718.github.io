@@ -5,7 +5,7 @@ import { Currency, type MarketPrices } from "../../types";
 function PricesDisplay({ prices }: { prices: MarketPrices }) {
   return (
     <div className="prices-wrapper">
-      {Object.values(Currency).map((currency) => (
+      {[Currency.Btc, Currency.Eth, Currency.Usdc].map((currency) => (
         <div className="prices-item">
           <span className="item-currency-name">{currency}</span>
           <span className="item-currency-value">

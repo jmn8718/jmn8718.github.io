@@ -54,6 +54,8 @@ export type MarketPrices = {
 export type RewardsData = Record<
   Currency,
   {
+    amount: string;
+    currencyAmount: string;
     rewards: string;
     currencyRewards: string;
   }

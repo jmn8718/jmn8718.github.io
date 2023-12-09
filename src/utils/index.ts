@@ -47,10 +47,12 @@ export const baseAmountToCurrencyAmount = (
 };
 
 export const formatCurrencyAmount = (amount: number) => {
-  return new Intl.NumberFormat("es-ES", {
+  const formattedAmount = new Intl.NumberFormat("es-ES", {
     style: "currency",
     currency: "EUR",
   }).format(amount);
+  console.log(amount, formattedAmount);
+  return formattedAmount;
 };
 export const formatAmount = (
   amount: string,
@@ -63,7 +65,9 @@ export const formatAmount = (
   const number = new BigNumber(amount);
   return `${number
     .div(conversion)
-    .toFixed(forceDecimals ?? decimals)} ${getCurrencySymol(currency)}`;
+    .toFixed(
+      forceDecimals ? Math.min(forceDecimals, decimals) : decimals,
+    )} ${getCurrencySymol(currency)}`;
 };
 
 export const formatDate = (date: string, format = "yyyy-MM-dd") => {
@@ -158,6 +162,26 @@ export const calculateAccumulatedInvestedAmount = (
   data: Investment[],
   prices: MarketPrices,
 ) => {
+  const accumulatedRewards = data.reduce(
+    (currentAccumulatedData, currentInvestment) => {
+      const currentInvestmentCurrency = currentInvestment.currency;
+      const currentAccumulatedReward =
+        currentAccumulatedData[currentInvestmentCurrency];
+      return {
+        ...currentAccumulatedData,
+        [currentInvestmentCurrency]: new BigNumber(currentAccumulatedReward)
+          .plus(currentInvestment.weeklyReward)
+          .toString(),
+      };
+    },
+    {
+      [Currency.Btc]: "0",
+      [Currency.Eth]: "0",
+      [Currency.Eur]: "0",
+      [Currency.Usdc]: "0",
+    } as Record<Currency, string>,
+  );
+
   const accumulatedInvestments = data.reduce(
     (currentAccumulatedData, currentInvestment) => {
       const currentInvestmentCurrency = currentInvestment.currency;
@@ -179,10 +203,16 @@ export const calculateAccumulatedInvestedAmount = (
   );
   return Object.keys(prices).reduce(
     (acc, currentCurrency) => {
-      const currencyRewards = accumulatedInvestments[currentCurrency] ?? "0";
+      const currencyRewards = accumulatedRewards[currentCurrency] ?? "0";
+      const currencyAmount = accumulatedInvestments[currentCurrency] ?? "0";
       return {
         ...acc,
         [currentCurrency]: {
+          amount: currencyAmount,
+          currencyAmount: currencyToPriceCurrency(
+            baseAmountToCurrencyAmount(currencyAmount, currentCurrency),
+            prices[currentCurrency],
+          ),
           rewards: currencyRewards,
           currencyRewards: currencyToPriceCurrency(
             baseAmountToCurrencyAmount(currencyRewards, currentCurrency),
@@ -193,18 +223,26 @@ export const calculateAccumulatedInvestedAmount = (
     },
     {
       [Currency.Btc]: {
+        amount: "0",
+        currencyAmount: "0",
         rewards: "0",
         currencyRewards: "0",
       },
       [Currency.Eth]: {
+        amount: "0",
+        currencyAmount: "0",
         rewards: "0",
         currencyRewards: "0",
       },
       [Currency.Eur]: {
+        amount: "0",
+        currencyAmount: "0",
         rewards: "0",
         currencyRewards: "0",
       },
       [Currency.Usdc]: {
+        amount: "0",
+        currencyAmount: "0",
         rewards: "0",
         currencyRewards: "0",
       },

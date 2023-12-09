@@ -21,18 +21,26 @@ import AccountRewardsDisplay from "./AccountRewardsDisplay.tsx";
 
 const DEFAULT_REWARDS_DATA = {
   [Currency.Btc]: {
+    amount: "0",
+    currencyAmount: "0",
     rewards: "0",
     currencyRewards: "0",
   },
   [Currency.Eth]: {
+    amount: "0",
+    currencyAmount: "0",
     rewards: "0",
     currencyRewards: "0",
   },
   [Currency.Eur]: {
+    amount: "0",
+    currencyAmount: "0",
     rewards: "0",
     currencyRewards: "0",
   },
   [Currency.Usdc]: {
+    amount: "0",
+    currencyAmount: "0",
     rewards: "0",
     currencyRewards: "0",
   },
@@ -79,12 +87,10 @@ function Hero({
   const [investmentsHeroData, setInvestmentsHeroData] = useState<{
     totalInvestments: number;
     totalRewards: number;
-    rewards: RewardsData;
     investments: RewardsData;
   }>({
     totalInvestments: 0,
     totalRewards: 0,
-    rewards: DEFAULT_REWARDS_DATA,
     investments: DEFAULT_REWARDS_DATA,
   });
   useEffect(() => {
@@ -100,23 +106,21 @@ function Hero({
 
   useEffect(() => {
     if (prices) {
-      const rewardsData = calculateAccumulatedRewards(investments, prices);
       const investmentsAccumulatedData = calculateAccumulatedInvestedAmount(
         investments,
         prices,
       );
-      const totalRewards = Object.values(rewardsData).reduce(
+      const totalRewards = Object.values(investmentsAccumulatedData).reduce(
         (acc, current) => acc + parseFloat(current.currencyRewards),
         0,
       );
       const totalInvestments = Object.values(investmentsAccumulatedData).reduce(
-        (acc, current) => acc + parseFloat(current.currencyRewards),
+        (acc, current) => acc + parseFloat(current.currencyAmount),
         0,
       );
       setInvestmentsHeroData({
         totalInvestments,
         totalRewards,
-        rewards: rewardsData,
         investments: investmentsAccumulatedData,
       });
 
@@ -132,27 +136,29 @@ function Hero({
     <div className="hero-wrapper">
       {prices ? (
         <div className="hero-row">
-          <PricesDisplay prices={prices} />
           <div className="hero-column">
-            <span className="hero-title">
-              Weekly Rewards (
-              {formatCurrencyAmount(investmentsHeroData.totalRewards)})
-            </span>
-            <RewardsDisplay data={investmentsHeroData.rewards} />
-            <span className="hero-title">
-              Invested (
+            <PricesDisplay prices={prices} />
+            <span className="hero-title pt-4">
+              Investments (
               {formatCurrencyAmount(investmentsHeroData.totalInvestments)})
             </span>
-            <RewardsDisplay data={investmentsHeroData.investments} />
+            <span className="hero-subtitle pt-4">
+              Rewards ({formatCurrencyAmount(investmentsHeroData.totalRewards)})
+            </span>
+            <span className="hero-title pt-4">
+              Accounts ({formatCurrencyAmount(accountsHeroData.totalInvested)})
+            </span>
+            <span className="hero-subtitle pt-4">
+              Reward ({formatCurrencyAmount(accountsHeroData.totalRewards)})
+            </span>
           </div>
           <div className="hero-column">
-            <span className="hero-title">
-              Accounts ({formatCurrencyAmount(accountsHeroData.totalRewards)})
-            </span>
+            <span className="hero-subtitle">Investments</span>
+            <RewardsDisplay investments={investmentsHeroData.investments} />
+          </div>
+          <div className="hero-column">
+            <span className="hero-subtitle">Accounts</span>
             <AccountRewardsDisplay data={accountsHeroData} />
-            <span className="hero-title">
-              Invested ({formatCurrencyAmount(accountsHeroData.totalInvested)})
-            </span>
           </div>
         </div>
       ) : (
