@@ -4,24 +4,63 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
+	description?: string;
+	image?: string;
 }
 
-const { title } = Astro.props;
+const {
+	title,
+	description = "Portfolio of Jose Miguel Navarro, software engineer focused on backend systems, cloud architecture, and full-stack product delivery.",
+	image = "/og-image.svg",
+} = Astro.props;
+
+const siteUrl = Astro.site ?? Astro.url;
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const ogImageURL = new URL(image, siteUrl);
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Jose Miguel Navarro",
+	jobTitle: "Software Engineer",
+	url: canonicalURL.href,
+	image: ogImageURL.href,
+	sameAs: [
+		"https://github.com/jmn8718",
+		"https://www.linkedin.com/in/jm8nav/",
+		"https://medium.com/@jmn8718",
+		"https://gitlab.com/users/jmn8718",
+	],
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Jose Miguel Navarro" />
+		<meta name="theme-color" content="#0f172a" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalURL.href} />
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL.href} />
+		<meta property="og:image" content={ogImageURL.href} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL.href} />
 		<title>{title}</title>
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 	</head>
 	<body>
+		<a class="skip-link" href="#content">Skip to content</a>
 		<Header />
-		<main>
+		<main id="content">
 			<slot />
 		</main>
 		<Footer />
@@ -29,26 +68,28 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-		--header-height: 60px;
-		--page-gutter: 16px;
-		--content-max-width: 840px;
+		--header-height: 74px;
+		--page-gutter: 18px;
+		--content-max-width: 980px;
+		--surface: #f8fafc;
+		--surface-elevated: #ffffff;
+		--text-main: #0f172a;
+		--text-muted: #334155;
+		--line: #e2e8f0;
+		--brand: #0f766e;
+		--brand-soft: #ccfbf1;
+		--shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		/* background: #13151a; */
-		background-color: white;
-		background-size: 224px;
+		font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+		background:
+			radial-gradient(circle at 20% 10%, rgba(20, 184, 166, 0.12), transparent 32%),
+			radial-gradient(circle at 85% 0%, rgba(15, 118, 110, 0.1), transparent 30%),
+			var(--surface);
+		color: var(--text-main);
 		width: 100%;
 		overflow-x: hidden;
+		scroll-behavior: smooth;
 	}
 	*,
 	*::before,
@@ -68,7 +109,7 @@ const { title } = Astro.props;
 	}
 	a {
 		color: inherit;
-		text-decoration: none; /* no underline */
+		text-decoration: none;
 	}
 	body {
 		min-height: 100vh;
@@ -81,13 +122,27 @@ const { title } = Astro.props;
 	}
 	main {
 		flex: 1;
-    margin: 0;
-    padding: 1rem 0;
-    width: 100%;
-    max-width: 100%;
-    /* color: white; */
-    /* font-size: 20px; */
-    line-height: 1.5;
+		margin: 0;
+		padding: 1.25rem 0 2.5rem;
+		width: 100%;
+		max-width: 100%;
+		line-height: 1.6;
+	}
+	p {
+		color: var(--text-muted);
+	}
+	.skip-link {
+		position: absolute;
+		top: -100%;
+		left: 12px;
+		z-index: 99;
+		padding: 10px 14px;
+		background: var(--text-main);
+		color: #fff;
+		border-radius: 8px;
+	}
+	.skip-link:focus {
+		top: 12px;
 	}
 	@media only screen and (min-width: 768px) {
 		:root {

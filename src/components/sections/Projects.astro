@@ -4,34 +4,29 @@ import Section from "../Section.astro";
 import ProjectBlock from "../ProjectBlock.astro";
 ---
 
-<Section title="projects" anchor="projects">
-  <h3 class="block_title m-0">Profesional Projects</h3>
+<Section title="software projects" anchor="projects">
+  <h3 class="block_title m-0">Professional Projects</h3>
   <ProjectBlock
     link="https://criptan.com/"
     projectName="Criptan"
-    description="Crypto finance application"
+    description="Crypto finance platform"
   >
-    During my time on this project, I took on various responsibilities
-    including:
+    During this project I worked as a backend software engineer, including:
     <ul>
       <li>
-        Developing serveless backend services for the application using AWS
-        technologies
+        Developing serverless backend services using AWS.
       </li>
       <li>
-        Developing serveless backend services for the application using AWS
-        technologies
+        Designing event-driven integrations for core product workflows.
       </li>
       <li>
-        Designing and developing new services to meet the technical requirements
-        of the project.
+        Building new services aligned with product and business requirements.
       </li>
     </ul>
-     Through this experience, I gained expertise in AWS technologies, system
-    architecture, and software development best practices.
+    Through this experience, I strengthened my expertise in AWS cloud
+    architecture and scalable backend system design.
   </ProjectBlock>
   <ProjectBlock
-    link="https://plingo.io"
     projectName="Plingo"
     description="Online language education platform"
   >
@@ -71,7 +66,6 @@ import ProjectBlock from "../ProjectBlock.astro";
   </ProjectBlock>
 
   <ProjectBlock
-    link="https://xray.trade/"
     projectName="XRAY"
     description="Cryptocurrency Trade platform."
   >
@@ -111,7 +105,8 @@ import ProjectBlock from "../ProjectBlock.astro";
     </strong>
   </ProjectBlock>
   <h3 class="block_title pt2">Personal Projects</h3>
-   You can find other personal projects on my repositores
+   You can find more open-source and personal software projects on my
+  repositories.
   <div class="icons_wrapper">
     <a href="https://github.com/jmn8718" target="_blank">
       <Icon name="fa6-brands:github" size={30} />
@@ -129,19 +124,21 @@ import ProjectBlock from "../ProjectBlock.astro";
     align-items: center;
   }
   .icons_wrapper {
-    margin-top: 16px;
-    width: 200px;
+    margin-top: 8px;
+    width: fit-content;
     display: flex;
-    justify-content: space-between;
+    gap: 14px;
   }
   .block_title {
-    text-align: center;
-    font-size: 1.75em;
-    color: #222;
+    text-align: left;
+    width: 100%;
+    font-size: 1.05rem;
+    color: var(--text-main);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    margin: 10px 0 6px;
   }
   .pt2 {
-    padding-top: 2rem;
+    padding-top: 1.25rem;
   }
 </style>

@@ -2,47 +2,89 @@
 import Section from "../Section.astro";
 ---
 
-<Section title="about me">
-  <div class="block">
-    Hello, my name is Jose Miguel. I'm a Software Engineer working at Criptan remotely from South Korea.
-    <br />
-    I'm a Software Engineer graduated in UPM, Madrid, with specialization in
-    distributed software and services.
-    <br />
-    As an experienced software engineer, I have worked on a variety of projects in different domains and technologies. With a passion for problem-solving and innovation, I take pride in building scalable and maintainable software systems that meet business objectives.
-    <br />
-    My expertise lies in full-stack web development, with strong experience in backend development, API design, and database architecture. I have experience working with a range of technologies such as Java, Node.js, SQL and NoSQL databases, AWS, and more.
-    <br />
-    I have experience working in Agile environments, using methodologies such as Scrum and Kanban, and I am comfortable working both individually and as part of a team. I have been involved in all stages of the software development lifecycle, from gathering requirements and designing solutions to testing and deployment.
-    <br />
-    If you're looking for a motivated, detail-oriented, and results-driven software engineer with a passion for building top-quality software, then let's connect!
+<Section title="about" anchor="home">
+  <div class="hero">
+    <p class="eyebrow">Software Engineer</p>
+    <h1>Jose Miguel Navarro</h1>
+    <p class="lead">
+      Backend software engineer focused on Node.js, TypeScript, API design, and
+      scalable cloud architecture on AWS.
+    </p>
+    <div class="chips">
+      <span>Node.js</span>
+      <span>TypeScript</span>
+      <span>AWS</span>
+      <span>PostgreSQL</span>
+      <span>Seoul</span>
+    </div>
   </div>
   <div class="block">
-    In addition to my passion for technology, I also have a keen interest in photography, travel, sports, food, and nature. I love to stay active and participate in various physical activities such as running, football, cycling, and hiking.
-    <br />
-    <br />
-    I've been running since 2006 and have achieved some notable milestones
-    <br />
-    2015 🇪🇸 San Silvestre Vallecana 10k 34'04''
-    <br />
-    <b>Marathons</b>
-    <br />
-    2019 🇯🇵 Osaka 2h56'52''
-    <br />
-    2017 🇱🇺 Rotterdam 3h09 35''
-    <br />
-    2011 🇪🇸 Madrid 3h31'12''
-    <br />
-    2008 🇰🇷 Seoul 3h21'36''
-    <br />
+    <p>
+      I currently work at Criptan as a Software Engineer, building backend
+      services with Node.js and TypeScript on event-driven AWS serverless
+      infrastructure.
+    </p>
+    <p>
+      I graduated from UPM (Madrid), specialized in distributed software and
+      services, and have worked across fintech, developer platforms, and
+      exchange products.
+    </p>
+    <p>
+      My focus is building scalable and maintainable systems that align with
+      business goals, from architecture and API implementation to shipping and
+      iteration. You can explore my <a href="#projects">software projects</a>
+      and <a href="#experience">work experience</a> below.
+    </p>
   </div>
 </Section>
 
 <style>
+  .hero {
+    display: grid;
+    gap: 8px;
+    padding: 8px 0 10px;
+  }
+  .eyebrow {
+    margin: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.11em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .lead {
+    margin: 0;
+    font-size: 1.06rem;
+    max-width: 65ch;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .chips span {
+    font-size: 0.82rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 6px 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
   .block {
     text-align: left;
   }
+  .block p {
+    margin: 0 0 10px;
+  }
   .block:not(:last-child) {
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
 </style>

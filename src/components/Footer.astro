@@ -3,17 +3,27 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  &copy; {currentYear} Jose Miguel Navarro, made with Astro.
+  <p>&copy; {currentYear} Jose Miguel Navarro</p>
+  <p>Built with Astro.</p>
 </footer>
 
 <style>
   footer {
     flex: 0;
-    background-color: white;
+    background: transparent;
     display: flex;
+    flex-direction: column;
+    gap: 2px;
     justify-content: center;
     align-items: center;
-    padding: 32px;
-    margin-top: 32px;
+    padding: 28px var(--page-gutter) 36px;
+    margin-top: 24px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
   }
 </style>

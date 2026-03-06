@@ -9,23 +9,31 @@ const { imagePath, text } = Astro.props;
 
 <style>
   .skill-wrapper {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 14px 10px;
+    min-height: 122px;
   }
   .skill-image {
     width: auto;
-    height: 64px;
+    height: 40px;
+    object-fit: contain;
   }
   .skill-text {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 0.88rem;
     text-align: center;
-    margin-top: 8px;
+    color: var(--text-main);
   }
 </style>
 
 <div class="skill-wrapper">
-  <img class="skill-image" src={imagePath} alt={text} />
+  <img class="skill-image" src={imagePath} alt={text} loading="lazy" />
   <span class="skill-text">{text}</span>
 </div>

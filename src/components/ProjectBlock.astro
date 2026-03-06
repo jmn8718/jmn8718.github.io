@@ -2,17 +2,25 @@
 import { Icon } from "astro-icon/components";
 interface Props {
   projectName: string;
-  link: string;
+  link?: string;
   description: string;
 }
 
 const { projectName, link, description} = Astro.props;
 ---
 
-<a href={link} target="_blank" class="link_wrapper">
-  <h4 class="project_title color_title">{projectName}</h4>
-  <Icon name="fa6-solid:desktop" size={30} />
-</a>
+{
+  link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer" class="link_wrapper">
+      <h4 class="project_title color_title">{projectName}</h4>
+      <Icon name="fa6-solid:desktop" size={30} />
+    </a>
+  ) : (
+    <div class="link_wrapper">
+      <h4 class="project_title color_title">{projectName}</h4>
+    </div>
+  )
+}
 <span class="project_description">{description}</span>
 <div class="content">
   <slot />
@@ -20,29 +28,36 @@ const { projectName, link, description} = Astro.props;
 
 <style>
   .project_title {
-    text-align: center;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #0f27af;
+    text-align: left;
+    margin: 0;
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    letter-spacing: 0.01em;
+    color: var(--text-main);
   }
   .project_description {
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 0.96rem;
+    color: var(--text-muted);
   }
   .content {
     width: 100%;
     text-align: left;
-    margin-top: 2rem;
+    margin-top: 12px;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--line);
+    padding-top: 12px;
   }
   .link_wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px 12px;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
   }
   .link_wrapper .project_title {
     margin-right: 0;
+  }
+  .link_wrapper :global(svg) {
+    color: var(--brand);
   }
 </style>

@@ -1,25 +1,15 @@
 <header>
-    <div class="nav-title">
-      <a href="#home">Jose Miguel Navarro</a>
-    </div>
-    <div class="nav-wrapper">
-      <ul>
-        <li>
-          <a href="#experience">experience</a>
-        </li>
-        <li>
-          <a href="#education">education</a>
-        </li>
-        <li>
-          <a href="#projects">projects</a>
-        </li>
-        <li>
-          <a href="#publications">publications</a>
-        </li>
-        <li>
-          <a href="#contact">contact</a>
-        </li>
-      </ul>
+    <div class="header-inner">
+      <a class="nav-title" href="#home">Jose Miguel Navarro</a>
+      <nav class="nav-wrapper" aria-label="Primary navigation">
+        <a href="#home">about me</a>
+        <a href="#skills">technical skills</a>
+        <a href="#experience">work experience</a>
+        <a href="#education">education</a>
+        <a href="#projects">software projects</a>
+        <a href="#publications">technical articles</a>
+        <a href="#contact">contact</a>
+      </nav>
     </div>
 </header>
 
@@ -31,64 +21,61 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: white;
-    z-index: 2;
-    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
-
+    z-index: 20;
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+    background: rgba(248, 250, 252, 0.9);
+  }
+  .header-inner {
+    height: 100%;
+    width: min(100%, calc(var(--content-max-width) + var(--page-gutter) * 2));
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 var(--page-gutter);
   }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    display: inline;
-  }
-  li a {
-    padding: 11px;
-  }
-  a {
-    text-transform: capitalize;
-    font-size: 1.1rem;
-  }
-
   .nav-title {
-    min-width: 200px;
-    flex: 0 0 auto;
-    margin-left: 16px;
-  }
-  .nav-title a {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
     white-space: nowrap;
-    display: inline-block;
   }
   .nav-wrapper {
-    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0;
+    white-space: nowrap;
   }
-
-  @media screen and (max-width: 640px) {
-    li a {
-      padding: 11px 4px;
-    }
+  .nav-wrapper::-webkit-scrollbar {
+    display: none;
   }
-  @media screen and (max-width: 580px) {
+  .nav-wrapper a {
+    text-transform: capitalize;
+    font-size: 0.94rem;
+    color: var(--text-muted);
+    padding: 8px 10px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .nav-wrapper a:hover,
+  .nav-wrapper a:focus-visible {
+    background: var(--brand-soft);
+    color: var(--brand);
+    outline: none;
+  }
+  @media screen and (max-width: 900px) {
     .nav-wrapper {
-      visibility: hidden;
       display: none;
     }
   }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 720px) {
     .nav-title {
-      min-width: 0;
-      margin-left: 12px;
-    }
-    .nav-title a {
-      font-size: 1.3rem;
-      line-height: 1.1;
+      font-size: 1rem;
     }
   }
 </style>
