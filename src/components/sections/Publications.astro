@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import Section from "../Section.astro";
 ---
 
@@ -7,7 +7,7 @@ import Section from "../Section.astro";
   <div class="publication_information">
     <span>You can find some of my publications on my personal medium</span>
     <a href="https://medium.com/@jmn8718" target="_blank">
-      <Icon pack="fa" name="medium" size={30} />
+      <Icon name="fa6-brands:medium" size={30} />
     </a>
   </div>
   <a
@@ -48,8 +48,11 @@ import Section from "../Section.astro";
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .publication_information span {
-    margin-right: 16px;
+    margin-right: 0;
+    min-width: 0;
   }
 </style>

@@ -1,6 +1,6 @@
 <header>
     <div class="nav-title">
-      <a href="#home">Jose Navarro</a>
+      <a href="#home">Jose Miguel Navarro</a>
     </div>
     <div class="nav-wrapper">
       <ul>
@@ -25,10 +25,12 @@
 
 <style>
   header {
-    width: 100vw;
+    width: 100%;
     height: var(--header-height);
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     background-color: white;
     z-index: 2;
     box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
@@ -56,11 +58,13 @@
 
   .nav-title {
     min-width: 200px;
-    flex: 0;
+    flex: 0 0 auto;
     margin-left: 16px;
   }
   .nav-title a {
     font-size: 1.5rem;
+    white-space: nowrap;
+    display: inline-block;
   }
   .nav-wrapper {
     margin-right: 16px;
@@ -75,6 +79,16 @@
     .nav-wrapper {
       visibility: hidden;
       display: none;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .nav-title {
+      min-width: 0;
+      margin-left: 12px;
+    }
+    .nav-title a {
+      font-size: 1.3rem;
+      line-height: 1.1;
     }
   }
 </style>

@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 interface Props {
   projectName: string;
   link: string;
@@ -11,7 +11,7 @@ const { projectName, link, description} = Astro.props;
 
 <a href={link} target="_blank" class="link_wrapper">
   <h4 class="project_title color_title">{projectName}</h4>
-  <Icon pack="fa" name="desktop" size={30} />
+  <Icon name="fa6-solid:desktop" size={30} />
 </a>
 <span class="project_description">{description}</span>
 <div class="content">
@@ -38,8 +38,11 @@ const { projectName, link, description} = Astro.props;
   .link_wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
   }
   .link_wrapper .project_title {
-    margin-right: 16px;
+    margin-right: 0;
   }
 </style>
