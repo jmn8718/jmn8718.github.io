@@ -2,89 +2,81 @@
 import Section from "../Section.astro";
 ---
 
-<Section title="about" anchor="home">
-  <div class="hero">
-    <p class="eyebrow">Software Engineer</p>
-    <h1>Jose Miguel Navarro</h1>
-    <p class="lead">
-      Backend software engineer focused on Node.js, TypeScript, API design, and
-      scalable cloud architecture on AWS.
-    </p>
-    <div class="chips">
-      <span>Node.js</span>
-      <span>TypeScript</span>
-      <span>AWS</span>
-      <span>PostgreSQL</span>
-      <span>Seoul</span>
-    </div>
-  </div>
-  <div class="block">
-    <p>
-      I currently work at Criptan as a Software Engineer, building backend
-      services with Node.js and TypeScript on event-driven AWS serverless
-      infrastructure.
-    </p>
-    <p>
-      I graduated from UPM (Madrid), specialized in distributed software and
-      services, and have worked across fintech, developer platforms, and
-      exchange products.
-    </p>
-    <p>
-      My focus is building scalable and maintainable systems that align with
-      business goals, from architecture and API implementation to shipping and
-      iteration. You can explore my <a href="#projects">software projects</a>
-      and <a href="#experience">work experience</a> below.
-    </p>
-  </div>
+<Section title="about" anchor="home" hideTitle={true} flushTop={true} noDivider={true}>
+	<div class="hero">
+		<h1 data-hero-name>Jose Miguel Navarro</h1>
+		<p class="lead">
+			Backend software engineer focused on Node.js, TypeScript, API design, and
+			scalable cloud architecture on AWS.
+		</p>
+	</div>
+	<div class="header-sentinel" data-header-sentinel aria-hidden="true"></div>
 </Section>
 
 <style>
-  .hero {
-    display: grid;
-    gap: 8px;
-    padding: 8px 0 10px;
-  }
-  .eyebrow {
-    margin: 0;
-    font-size: 0.85rem;
-    letter-spacing: 0.11em;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--brand);
-  }
-  h1 {
-    margin: 0;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-  }
-  .lead {
-    margin: 0;
-    font-size: 1.06rem;
-    max-width: 65ch;
-  }
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-  }
-  .chips span {
-    font-size: 0.82rem;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--surface);
-    padding: 6px 10px;
-    font-weight: 700;
-    color: var(--text-muted);
-  }
-  .block {
-    text-align: left;
-  }
-  .block p {
-    margin: 0 0 10px;
-  }
-  .block:not(:last-child) {
-    margin-bottom: 14px;
-  }
+	:global(#home .section_content) {
+		gap: clamp(1rem, 3vw, 1.5rem);
+	}
+	.hero {
+		display: grid;
+		gap: var(--space-lg);
+		padding-top: clamp(1rem, 2vw, 1.5rem);
+		position: relative;
+		max-width: min(100%, 64rem);
+	}
+	.hero::after {
+		content: "";
+		position: absolute;
+		inset-inline-end: min(2vw, 1rem);
+		inset-block-start: clamp(2.5rem, 10vw, 5rem);
+		inline-size: clamp(4rem, 10vw, 6rem);
+		block-size: clamp(4rem, 10vw, 6rem);
+		border: 1px solid rgba(99, 117, 139, 0.26);
+		border-radius: 1.25rem;
+		transform: rotate(10deg);
+		pointer-events: none;
+	}
+	.header-sentinel {
+		inline-size: 100%;
+		block-size: 1px;
+	}
+	h1 {
+		margin: 0;
+		font-size: clamp(2.8rem, 7vw, 5rem);
+		line-height: 0.98;
+		letter-spacing: -0.045em;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+		white-space: nowrap;
+		max-width: none;
+	}
+	.lead {
+		margin: 0;
+		font-size: clamp(1.15rem, 2.3vw, 1.45rem);
+		line-height: 1.35;
+		max-width: 32ch;
+		color: #344553;
+		color: color-mix(in srgb, var(--text-main) 82%, var(--text-muted));
+	}
+	@media only screen and (min-width: 840px) {
+		.hero {
+			padding-right: clamp(2rem, 7vw, 6rem);
+		}
+		.hero::after {
+			inset-inline-end: 0;
+		}
+	}
+	@media only screen and (max-width: 839px) {
+		.hero::after {
+			opacity: 0.55;
+		}
+	}
+	@media only screen and (max-width: 640px) {
+		h1 {
+			white-space: normal;
+			text-wrap: balance;
+		}
+		.lead {
+			max-width: 100%;
+		}
+	}
 </style>

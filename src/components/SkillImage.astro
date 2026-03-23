@@ -1,10 +1,12 @@
 ---
 interface Props {
 	text: string;
-  imagePath: string
+  imagePath: string;
+  width?: number;
+  height?: number;
 }
 
-const { imagePath, text } = Astro.props;
+const { imagePath, text, width = 40, height = 40 } = Astro.props;
 ---
 
 <style>
@@ -13,12 +15,14 @@ const { imagePath, text } = Astro.props;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: var(--space-sm);
     border: 1px solid var(--line);
-    background: var(--surface);
+    background: #f8f8f4;
+    background: color-mix(in srgb, var(--surface-elevated) 92%, var(--surface-soft));
     border-radius: 14px;
-    padding: 14px 10px;
+    padding: var(--space-md) var(--space-sm);
     min-height: 122px;
+    min-width: 0;
   }
   .skill-image {
     width: auto;
@@ -27,13 +31,17 @@ const { imagePath, text } = Astro.props;
   }
   .skill-text {
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     text-align: center;
     color: var(--text-main);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    line-height: 1.25;
   }
 </style>
 
 <div class="skill-wrapper">
-  <img class="skill-image" src={imagePath} alt={text} loading="lazy" />
+  <img class="skill-image" src={imagePath} alt={text} loading="lazy" width={width} height={height} />
   <span class="skill-text">{text}</span>
 </div>

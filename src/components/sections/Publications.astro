@@ -5,62 +5,102 @@ import Section from "../Section.astro";
 
 <Section title="technical publications" anchor="publications">
   <div class="publication_information">
-    <span>Read more backend engineering articles on my Medium profile.</span>
-    <a href="https://medium.com/@jmn8718" target="_blank" rel="noopener noreferrer">
-      <Icon name="fa6-brands:medium" size={30} />
+    <p>Read more backend engineering articles on my Medium profile.</p>
+    <a href="https://medium.com/@jmn8718" target="_blank" rel="noopener noreferrer" aria-label="Open Medium profile">
+      <Icon name="fa6-brands:medium" size={20} />
     </a>
   </div>
-  <a
-    href="https://blog.couchbase.com/graphql-server-node-couchbase-ottoman-spatial-view/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <h5 class="publication_title">
-      GraphQL server with Node.js, Couchbase, Ottoman, and spatial views
-    </h5>
-  </a>
-  <span class="publication_description">
-    A guide to building GraphQL APIs with Node.js and Couchbase spatial views.
-  </span>
-  <a
-    href="https://blog.couchbase.com/develop-a-rest-api-with-couchbase-ottoman-nodejs-hapijs/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <h5 class="publication_title">
-      Develop a REST API with Couchbase Ottoman, Node.js, and hapi.js
-    </h5>
-  </a>
-  <span class="publication_description">
-    A tutorial on designing REST APIs with Node.js and hapi.js using Couchbase
-    as the database.
-  </span>
+  <ul class="publication_list">
+    <li class="publication_item">
+      <article>
+        <h3 class="publication_title">
+          <a
+            href="https://blog.couchbase.com/graphql-server-node-couchbase-ottoman-spatial-view/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GraphQL server with Node.js, Couchbase, Ottoman, and spatial views
+          </a>
+        </h3>
+        <p class="publication_description">
+          A guide to building GraphQL APIs with Node.js and Couchbase spatial views.
+        </p>
+      </article>
+    </li>
+    <li class="publication_item">
+      <article>
+        <h3 class="publication_title">
+          <a
+            href="https://blog.couchbase.com/develop-a-rest-api-with-couchbase-ottoman-nodejs-hapijs/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Develop a REST API with Couchbase Ottoman, Node.js, and hapi.js
+          </a>
+        </h3>
+        <p class="publication_description">
+          A tutorial on designing REST APIs with Node.js and hapi.js using Couchbase
+          as the database.
+        </p>
+      </article>
+    </li>
+  </ul>
 </Section>
 
 <style>
   .publication_title {
-    font-size: 1.2em;
+    font-size: 1.05rem;
     color: var(--text-main);
-    margin-bottom: 2px;
-    margin-top: 12px;
+    margin: 0;
     text-align: left;
   }
   .publication_description {
-    margin-bottom: 8px;
+    margin: 0;
     text-align: left;
-    width: 100%;
+    max-width: 62ch;
+  }
+  .publication_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-lg);
+  }
+  .publication_item {
+    margin: 0;
+    border-top: 1px solid var(--line);
+    padding-top: var(--space-lg);
+  }
+  .publication_item article {
+    display: grid;
+    gap: var(--space-xs);
   }
   .publication_information {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--space-sm);
     width: 100%;
     color: var(--text-muted);
   }
-  .publication_information span {
-    margin-right: 0;
+  .publication_information p {
+    margin: 0;
     min-width: 0;
+  }
+  .publication_information a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    border-radius: 999px;
+    color: var(--text-main);
+    background: var(--surface-soft);
+  }
+  .publication_information a:hover,
+  .publication_information a:focus-visible {
+    color: var(--brand);
+    background: var(--brand-soft);
   }
 </style>

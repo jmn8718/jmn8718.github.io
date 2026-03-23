@@ -27,7 +27,7 @@ const { projectName, link, description} = Astro.props;
 </div>
 
 <style>
-  .project_title {
+.project_title {
     text-align: left;
     margin: 0;
     font-size: clamp(1.25rem, 2vw, 1.55rem);
@@ -42,16 +42,15 @@ const { projectName, link, description} = Astro.props;
   .content {
     width: 100%;
     text-align: left;
-    margin-top: 12px;
+    margin-top: var(--space-sm);
     color: var(--text-muted);
-    border-top: 1px dashed var(--line);
-    padding-top: 12px;
+    max-width: 72ch;
   }
   .link_wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: var(--space-sm);
     width: 100%;
   }
   .link_wrapper .project_title {
@@ -59,5 +58,11 @@ const { projectName, link, description} = Astro.props;
   }
   .link_wrapper :global(svg) {
     color: var(--brand);
+  }
+  :global(.project-block) {
+    display: grid;
+    gap: var(--space-xs);
+    border-top: 1px solid var(--line);
+    padding-top: var(--space-lg);
   }
 </style>
