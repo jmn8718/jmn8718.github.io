@@ -69,9 +69,9 @@ const jsonLd = {
 				const start = () => {
 					const header = document.getElementById("site-header");
 					const sentinel = document.querySelector("[data-header-sentinel]");
-					const triggerSection = document.getElementById("home");
-
-					if (!header || !sentinel || !triggerSection) return;
+					if (!header || !sentinel) return;
+					document.documentElement.setAttribute("data-js-header", "true");
+					let ticking = false;
 
 					const setVisibility = (visible) => {
 						if (visible) {
@@ -82,33 +82,20 @@ const jsonLd = {
 					};
 
 					const updateFromScroll = () => {
-						const threshold = triggerSection.offsetTop + triggerSection.offsetHeight;
-						setVisibility(window.scrollY >= threshold);
+						ticking = false;
+						const sentinelTop = sentinel.getBoundingClientRect().top;
+						setVisibility(sentinelTop <= 0);
+					};
+					const requestUpdate = () => {
+						if (ticking) return;
+						ticking = true;
+						window.requestAnimationFrame(updateFromScroll);
 					};
 
-					if ("IntersectionObserver" in window) {
-						const observer = new IntersectionObserver(
-							(entries) => {
-								const entry = entries[0];
-								setVisibility(!entry.isIntersecting);
-							},
-							{
-								rootMargin: "0px 0px 0px 0px",
-								threshold: 0,
-							},
-						);
-
-						observer.observe(sentinel);
-						updateFromScroll();
-						window.addEventListener("resize", updateFromScroll);
-						window.addEventListener("load", updateFromScroll, { once: true });
-						return;
-					}
-
-					updateFromScroll();
-					window.addEventListener("scroll", updateFromScroll, { passive: true });
-					window.addEventListener("resize", updateFromScroll);
-					window.addEventListener("load", updateFromScroll, { once: true });
+					requestUpdate();
+					window.addEventListener("scroll", requestUpdate, { passive: true });
+					window.addEventListener("resize", requestUpdate);
+					window.addEventListener("load", requestUpdate, { once: true });
 				};
 
 				if (document.readyState === "loading") {
@@ -141,15 +128,22 @@ const jsonLd = {
 		--brand: #28527a;
 		--brand-strong: #163955;
 		--brand-soft: #d8e5f0;
-		--accent: #7b8794;
+		--accent: #a4632a;
+		--accent-soft: #efd7c2;
+		--hero-ornament: rgba(164, 99, 42, 0.22);
+		--hero-highlight: rgba(255, 255, 255, 0.55);
+		--surface-tint: #f8fafc;
+		--overlay-header: rgba(250, 251, 252, 0.92);
+		--shadow-soft: rgba(18, 26, 36, 0.08);
 		--shadow: 0 18px 42px rgba(15, 23, 42, 0.07);
 	}
 	html {
 		font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
 		background: linear-gradient(180deg, #fbfcfd, #f4f7fa);
 		background:
-			radial-gradient(circle at 14% 7%, rgba(40, 82, 122, 0.09), transparent 28%),
-			radial-gradient(circle at 85% 0%, rgba(123, 135, 148, 0.07), transparent 24%),
+			radial-gradient(circle at 12% 8%, rgba(40, 82, 122, 0.12), transparent 26%),
+			radial-gradient(circle at 83% 0%, rgba(164, 99, 42, 0.1), transparent 22%),
+			linear-gradient(125deg, rgba(22, 57, 85, 0.03) 0, transparent 36%),
 			linear-gradient(180deg, rgba(251, 252, 253, 0.94), rgba(244, 247, 250, 0.99)),
 			var(--surface);
 		color: var(--text-main);
@@ -177,6 +171,17 @@ const jsonLd = {
 		text-decoration: none;
 		text-underline-offset: 0.16em;
 	}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
 	a:focus-visible,
 	button:focus-visible,
 	[role="button"]:focus-visible {
@@ -187,6 +192,7 @@ const jsonLd = {
 	@supports not (color: color-mix(in srgb, black 50%, white)) {
 		:root {
 			--brand-soft: #d8e7f4;
+			--surface-tint: #f8fafc;
 		}
 	}
 	body {

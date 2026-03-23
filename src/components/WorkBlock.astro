@@ -13,27 +13,27 @@ const { companyName, link, period, location, role } = Astro.props;
 <div class="wrapper">
   {
     link ? (
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a href={link} target="_blank" rel="noopener noreferrer" aria-label={`${companyName}, opens in new tab`}>
         <h3 class="title color_title">{companyName}</h3>
       </a>
     ) : (
       <h3 class="title color_title">{companyName}</h3>
     )
   }
-  <div class="information">
-    <p>
-      <strong>Role</strong>
-       : {role}
-    </p>
-    <p>
-      <strong>Location</strong>
-       : {location}
-    </p>
-    <p>
-      <strong>Period</strong>
-       : {period}
-    </p>
-  </div>
+  <dl class="information">
+    <div class="meta_row">
+      <dt>Role</dt>
+      <dd>{role}</dd>
+    </div>
+    <div class="meta_row">
+      <dt>Location</dt>
+      <dd>{location}</dd>
+    </div>
+    <div class="meta_row">
+      <dt>Period</dt>
+      <dd>{period}</dd>
+    </div>
+  </dl>
   <div class="content">
     <slot />
   </div>
@@ -60,10 +60,30 @@ const { companyName, link, period, location, role } = Astro.props;
     flex-wrap: wrap;
     width: 100%;
     padding: 0;
+    margin: 0;
   }
-  .information p {
+  .meta_row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+  .information dt {
     margin: 0;
     font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+  .information dt::after {
+    content: ":";
+    margin-left: 0.04em;
+  }
+  .information dd {
+    margin: 0;
+    font-size: 0.92rem;
+    min-width: 0;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
   }
   .content {
     margin-top: var(--space-xs);
@@ -104,9 +124,6 @@ const { companyName, link, period, location, role } = Astro.props;
     .information {
       flex-direction: column;
       gap: var(--space-xs);
-    }
-    .information p {
-      margin: 0;
     }
   }
 </style>

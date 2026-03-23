@@ -21,19 +21,20 @@ import Section from "../Section.astro";
 		display: grid;
 		gap: var(--space-lg);
 		padding-top: clamp(1rem, 2vw, 1.5rem);
+		padding-bottom: clamp(0.75rem, 2vw, 1.5rem);
 		position: relative;
-		max-width: min(100%, 64rem);
+		max-width: min(100%, 70rem);
 	}
 	.hero::after {
 		content: "";
 		position: absolute;
-		inset-inline-end: min(2vw, 1rem);
-		inset-block-start: clamp(2.5rem, 10vw, 5rem);
-		inline-size: clamp(4rem, 10vw, 6rem);
-		block-size: clamp(4rem, 10vw, 6rem);
-		border: 1px solid rgba(99, 117, 139, 0.26);
-		border-radius: 1.25rem;
-		transform: rotate(10deg);
+		inset-inline-end: clamp(0rem, 3vw, 1.5rem);
+		inset-block-start: clamp(2rem, 9vw, 4.75rem);
+		inline-size: clamp(6rem, 16vw, 10rem);
+		block-size: clamp(4rem, 12vw, 7rem);
+		border: 1px solid var(--hero-ornament);
+		border-radius: 999px;
+		transform: rotate(-16deg);
 		pointer-events: none;
 	}
 	.header-sentinel {
@@ -42,24 +43,30 @@ import Section from "../Section.astro";
 	}
 	h1 {
 		margin: 0;
-		font-size: clamp(2.8rem, 7vw, 5rem);
-		line-height: 0.98;
-		letter-spacing: -0.045em;
-		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
-		white-space: nowrap;
-		max-width: none;
+		font-size: clamp(3.15rem, 8.8vw, 6.4rem);
+		line-height: 0.92;
+		letter-spacing: -0.055em;
+		text-wrap: balance;
+		overflow-wrap: anywhere;
+		max-width: 14ch;
+		position: relative;
+		z-index: 1;
 	}
 	.lead {
 		margin: 0;
-		font-size: clamp(1.15rem, 2.3vw, 1.45rem);
-		line-height: 1.35;
-		max-width: 32ch;
-		color: #344553;
+		font-size: clamp(1.15rem, 2.1vw, 1.42rem);
+		line-height: 1.42;
+		max-width: 34ch;
+		color: var(--text-muted);
 		color: color-mix(in srgb, var(--text-main) 82%, var(--text-muted));
+		padding-inline-start: clamp(0.9rem, 2vw, 1.5rem);
+		border-inline-start: 0.18rem solid color-mix(in srgb, var(--accent) 58%, transparent);
+		position: relative;
+		z-index: 1;
 	}
 	@media only screen and (min-width: 840px) {
 		.hero {
-			padding-right: clamp(2rem, 7vw, 6rem);
+			padding-right: clamp(3rem, 10vw, 8rem);
 		}
 		.hero::after {
 			inset-inline-end: 0;
@@ -71,12 +78,17 @@ import Section from "../Section.astro";
 		}
 	}
 	@media only screen and (max-width: 640px) {
+		.hero::after {
+			inline-size: 4.5rem;
+			block-size: 4.5rem;
+			inset-block-start: 1.5rem;
+		}
 		h1 {
-			white-space: normal;
 			text-wrap: balance;
 		}
 		.lead {
 			max-width: 100%;
+			padding-inline-start: 0.85rem;
 		}
 	}
 </style>

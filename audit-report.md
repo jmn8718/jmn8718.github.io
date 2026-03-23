@@ -1,112 +1,93 @@
 # Interface Audit Report
 
-Method: static code review of the current Astro project, anti-pattern review using `i-frontend-design`, and verification with `pnpm build` on 2026-03-23. This report reflects the latest state after the full layout, hardening, clarity, normalization, optimization, boldness, and polish passes.
-
 ## Anti-Patterns Verdict
 
-**Verdict: Pass**
+Pass.
 
-This no longer looks obviously AI-generated. The interface is still restrained, but it now has a clearer visual opinion:
-
-- More authored hero typography and section framing.
-- A warmer, less generic palette than the original cool portfolio default.
-- Cleaner structural rhythm with fewer templated card cues.
-
-There are still a few conventional portfolio traits, such as uppercase section labels and pill navigation, but they no longer dominate the experience.
+This no longer looks AI-generated in any obvious way. The page has a clearer editorial point of view, stronger section rhythm, and more intentional composition than a standard generated portfolio. It stays professional and restrained, but it no longer feels generic.
 
 ## Executive Summary
 
-- Total issues found: 3
-- Severity breakdown: 0 Critical, 0 High, 1 Medium, 2 Low
-- Overall quality score: 91/100
+- Total issues found: 0 critical, 0 high, 1 medium, 1 low
 - Most important remaining issues:
-  - Browser support for some modern CSS features depends on your target audience.
-  - The navigation row can still become crowded if labels expand substantially.
-  - The design is now distinct enough for a portfolio, but still favors restraint over memorability.
+  - The sticky header still relies on runtime JavaScript.
+  - A few decorative treatments are still stylistic rather than conceptually tied to the portfolio content.
+- Overall quality score: 97/100
 - Recommended next steps:
-  - Decide whether broad browser fallback matters for this portfolio.
-  - If not, the site is in strong shipping shape.
+  1. Leave the site as-is if the goal is a polished, professional portfolio.
+  2. Only revisit the header if you want a simpler progressive-enhancement story.
+  3. Any future design changes should be conceptual rather than structural.
 
 ## Detailed Findings By Severity
 
 ### Critical Issues
 
-None verified in this pass.
+None.
 
 ### High-Severity Issues
 
-None verified in this pass.
+None.
 
 ### Medium-Severity Issues
 
-#### 1. Some visual styling relies on newer CSS features without explicit fallbacks
+#### 1. Sticky header remains a JavaScript enhancement
 
-- **Location**: `src/layouts/Layout.astro:93-99`, `src/components/Header.astro:25`, `src/components/sections/About.astro:55-56`, `src/components/SkillImage.astro:20`
-- **Severity**: Medium
-- **Category**: Hardening / Theming
-- **Description**: The current design uses `color-mix()` and `text-wrap: balance`, which are broadly modern but not universal across all older browsers.
-- **Impact**: Most modern users will get the intended design, but some older browser combinations may fall back less gracefully than ideal.
-- **WCAG/Standard**: Progressive enhancement / browser compatibility best practice
-- **Recommendation**: If older browser support matters, add basic fallback declarations before the modern ones.
-- **Suggested command**: `/i-harden`
+- Location: `src/layouts/Layout.astro`, `src/components/Header.astro`
+- Severity: Medium
+- Category: Resilience / Accessibility
+- Description: The fixed header still depends on runtime script to enter and leave its hidden state based on scroll position.
+- Impact: The current implementation is working and reasonably hardened, but it remains less robust than a static or CSS-first alternative.
+- WCAG/Standard: Progressive enhancement best practice
+- Recommendation: Keep it if the interaction matters enough; otherwise simplify it to reduce moving parts.
+- Suggested command: `/i-harden`
 
 ### Low-Severity Issues
 
-#### 2. Navigation labels may feel compressed under longer localization or content expansion
+#### 2. Hero/section decorative motifs are still abstract rather than content-derived
 
-- **Location**: `src/components/Header.astro:43-51`, `src/components/Header.astro:55-68`
-- **Severity**: Low
-- **Category**: Responsive / Hardening
-- **Description**: The nav remains horizontally scrollable and works well now, but the label set is already fairly verbose.
-- **Impact**: If labels expand significantly, especially in translation, the navigation may feel busier and require more horizontal scrolling on smaller devices.
-- **WCAG/Standard**: i18n / responsive resilience best practice
-- **Recommendation**: If localization is planned, consider shorter labels or a compact mobile nav mode.
-- **Suggested command**: `/i-harden`
-
-#### 3. The portfolio is polished, but still intentionally conservative in brand expression
-
-- **Location**: `src/layouts/Layout.astro:70-103`, `src/components/sections/About.astro:45-91`, `src/components/Section.astro:17-35`
-- **Severity**: Low
-- **Category**: Anti-Patterns / Design Direction
-- **Description**: The visual system is now tasteful and more authored, but it still prioritizes composure over strong differentiation.
-- **Impact**: This is not a usability problem. It only matters if your goal is to stand out more aggressively in hiring or personal branding contexts.
-- **WCAG/Standard**: `i-frontend-design` anti-pattern guidance
-- **Recommendation**: Leave as-is if you want calm professionalism. Push typography or composition further only if you want more personality.
-- **Suggested command**: `/i-bolder`
+- Location: `src/components/sections/About.astro`, `src/components/Section.astro`
+- Severity: Low
+- Category: Visual system
+- Description: The current motifs are tasteful and distinctive, but they remain abstract framing devices rather than something clearly rooted in backend engineering, APIs, or systems design.
+- Impact: This is not a usability problem, only a ceiling on brand specificity.
+- WCAG/Standard: N/A
+- Recommendation: Only if desired, replace decorative accents with a more domain-specific visual language.
+- Suggested command: `/i-bolder`
 
 ## Patterns & Systemic Issues
 
-- Most earlier issues are resolved: no missing mobile navigation, no undersized icon hit areas, no weak publication semantics, and no `<br />`-driven experience content.
-- The system is now tokenized more consistently and uses repeated interaction patterns across sections.
-- Remaining issues are mostly about optional resilience and taste, not structural quality.
+- Accessibility, responsiveness, and interaction polish are now consistently strong across the site.
+- The remaining issues are not about broken UX; they are about enhancement strategy and visual meaning.
+- The codebase is in a good state where future changes can be selective instead of corrective.
 
 ## Positive Findings
 
-- `pnpm build` completes with 0 errors, 0 warnings, and 0 hints.
-- Global focus-visible treatment is present and consistent in `src/layouts/Layout.astro`.
-- Root overflow clipping and header blur have been removed, resolving the last meaningful performance and debugging concerns from prior audits.
-- The hero section has a much stronger visual hierarchy in `src/components/sections/About.astro`.
-- Skill cards now handle longer labels more safely with better wrapping in `src/components/SkillImage.astro` and `src/components/sections/Skills.astro`.
-- Publications are semantically structured as a list of articles in `src/components/sections/Publications.astro`.
-- Contact and repository actions meet touch-target expectations and expose clear labels.
-- The unused legacy `Card.astro` component has been removed.
+- The site has strong visual rhythm now; sections no longer feel like repeated stacked blocks.
+- The projects area benefits from a clearer main/sidebar composition without obvious crowding.
+- Education is far easier to scan after being restructured into grouped milestones.
+- Skills and contact sections now have better intro-to-content hierarchy.
+- Focus states, touch targets, semantic structure, and new-tab disclosure remain solid.
+- Build health is clean: `pnpm build` passes with 0 errors, 0 warnings, and 0 hints.
 
 ## Recommendations By Priority
 
-1. **Immediate**
-   - No immediate blockers remain.
+### 1. Immediate
 
-2. **Short-term**
-   - Add fallback declarations for `color-mix()` and `text-wrap: balance` only if you care about older browser support.
+- None. There are no critical or high-severity issues.
 
-3. **Medium-term**
-   - Revisit navigation wording if you later localize the site or add more sections.
+### 2. Short-term
 
-4. **Long-term**
-   - Only pursue a bolder visual identity if you want more personal-brand differentiation; usability no longer demands it.
+- Decide whether the sticky header interaction should remain script-driven.
 
-## Suggested Commands For Fixes
+### 3. Medium-term
 
-- Use `/i-harden` if you want explicit fallbacks for newer CSS features and extra resilience for longer navigation labels.
-- Use `/i-bolder` only if you decide the site should feel more distinctive rather than simply polished and credible.
-- Use `/i-audit` again only after any future design or content expansion.
+- Only if you want a stronger personal signature, move from abstract accents to domain-specific motifs.
+
+### 4. Long-term
+
+- Avoid unnecessary restyling. The next improvements should be conceptual, not cosmetic.
+
+## Suggested Commands for Fixes
+
+- Use `/i-harden` if you want to simplify or further harden the sticky-header behavior.
+- Use `/i-bolder` only if you want to tie the visual identity more explicitly to engineering/systems themes.

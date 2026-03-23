@@ -3,44 +3,102 @@ import Section from "../Section.astro";
 ---
 
 <Section title="education and training" anchor="education">
-  <div class="wrapper">
-    <p>
-      I earned my degree in Software Engineering from UPM, Madrid. During my
-      studies, I took courses on Unix systems, programming with languages like
-      C++, Java (the primary language), web development, and Android
-      applications. The main focus of the program was on managing software, with
-      courses on project management, agile techniques, design programs, testing,
-      and quality.
-    </p>
-    <p>
-      In my final year, I participated in a group project as an intern where I
-      developed a desktop application for refactoring source code when a change
-      was made in the SQL queries. This internship helped me write the project
-      for my graduation.
-    </p>
-    <p>
-      After completing my undergraduate degree, I pursued a Master's in Computer
-      Engineering with a specialization in Distributed Software and Services.
-      During this program, I attended more specialized classes in Computer
-      Engineering and learned about new cloud technologies and distributed
-      systems. I also completed an internship as a full-stack developer on a
-      university project.
-    </p>
-    <p>
-      Before university, I completed a two-year professional formation in
-      Maintenance and Management of Industrial Equipment. This program taught me
-      how to manage industrial equipment, develop quality assurance plans,
-      manage the development process, and oversee projects where I managed and
-      developed all the stages (planning, development, testing).
-    </p>
+  <div class="education_layout">
+    <div class="education_intro">
+      <p class="education_kicker">Formal background</p>
+      <p class="education_text">
+        Training across software engineering, distributed systems, and earlier
+        technical studies that shaped a practical, systems-first mindset.
+      </p>
+    </div>
+    <div class="wrapper">
+      <article class="education_item">
+        <h3>Software Engineering, UPM Madrid</h3>
+        <p>
+          I earned my degree in Software Engineering from UPM, Madrid. The program
+          covered Unix systems, C++, Java, web development, Android applications,
+          project management, agile methods, testing, and quality.
+        </p>
+      </article>
+      <article class="education_item">
+        <h3>Graduation Project and Internship</h3>
+        <p>
+          In my final year, I joined a group internship project where I developed
+          a desktop application for refactoring source code after SQL query changes.
+          That work became the basis for my graduation project.
+        </p>
+      </article>
+      <article class="education_item">
+        <h3>Master’s in Computer Engineering</h3>
+        <p>
+          I later completed a Master’s in Computer Engineering focused on
+          Distributed Software and Services, with deeper study in cloud technologies,
+          distributed systems, and a full-stack university internship.
+        </p>
+      </article>
+      <article class="education_item">
+        <h3>Technical Formation Before University</h3>
+        <p>
+          Before university, I completed a two-year program in Maintenance and
+          Management of Industrial Equipment, with training in quality assurance,
+          process management, planning, development, and testing.
+        </p>
+      </article>
+    </div>
   </div>
 </Section>
 
 <style>
+  .education_layout {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+  }
+  .education_intro {
+    display: grid;
+    gap: var(--space-xs);
+    max-width: 32rem;
+  }
+  .education_kicker {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .education_text {
+    margin: 0;
+    max-width: 34ch;
+  }
   .wrapper {
     text-align: left;
+    display: grid;
+    gap: var(--space-lg);
   }
-  p {
-    margin: 0 0 10px;
+  .education_item {
+    display: grid;
+    gap: var(--space-xs);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--line);
+  }
+  .education_item h3,
+  .education_item p {
+    margin: 0;
+  }
+  .education_item h3 {
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    color: var(--text-main);
+    letter-spacing: 0.01em;
+  }
+  @media only screen and (min-width: 980px) {
+    .education_layout {
+      grid-template-columns: minmax(0, 0.34fr) minmax(0, 1fr);
+      align-items: start;
+      column-gap: clamp(2rem, 5vw, 4rem);
+    }
+    .wrapper {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1.5rem, 3vw, 2rem);
+    }
   }
 </style>

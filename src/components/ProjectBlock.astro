@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 interface Props {
   projectName: string;
   link?: string;
@@ -11,9 +10,15 @@ const { projectName, link, description} = Astro.props;
 
 {
   link ? (
-    <a href={link} target="_blank" rel="noopener noreferrer" class="link_wrapper">
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link_wrapper"
+      aria-label={`Open ${projectName} project website, opens in new tab`}
+    >
       <h4 class="project_title color_title">{projectName}</h4>
-      <Icon name="fa6-solid:desktop" size={30} />
+      <span class="project_link_arrow" aria-hidden="true">↗</span>
     </a>
   ) : (
     <div class="link_wrapper">
@@ -35,9 +40,10 @@ const { projectName, link, description} = Astro.props;
     color: var(--text-main);
   }
   .project_description {
-    font-style: italic;
+    font-style: normal;
     font-size: 0.96rem;
     color: var(--text-muted);
+    letter-spacing: 0.01em;
   }
   .content {
     width: 100%;
@@ -52,12 +58,25 @@ const { projectName, link, description} = Astro.props;
     justify-content: space-between;
     gap: var(--space-sm);
     width: 100%;
+    transition: color 0.2s ease;
   }
   .link_wrapper .project_title {
     margin-right: 0;
   }
-  .link_wrapper :global(svg) {
+  .project_link_arrow {
     color: var(--brand);
+    flex-shrink: 0;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .link_wrapper:hover .project_title,
+  .link_wrapper:focus-visible .project_title {
+    color: var(--brand-strong);
+  }
+  .link_wrapper:hover .project_link_arrow,
+  .link_wrapper:focus-visible .project_link_arrow {
+    transform: translate(1px, -1px);
   }
   :global(.project-block) {
     display: grid;

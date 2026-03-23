@@ -4,26 +4,66 @@ import SkillImage from "../SkillImage.astro";
 ---
 
 <Section title="technical skills" anchor="skills">
-  <div class="wrapper">
-    <SkillImage text="Node.js" imagePath="/images/node.png" />
-    <SkillImage text="React" imagePath="/images/react.png" />
-    <SkillImage text="JavaScript" imagePath="/images/js.png" />
-    <SkillImage text="HTML" imagePath="/images/html5.png" />
-    <SkillImage text="CSS" imagePath="/images/css.png" />
-    <SkillImage text="Docker" imagePath="/images/docker.png" />
-    <SkillImage text="MongoDB" imagePath="/images/mongo.png" />
-    <SkillImage text="PostgreSQL" imagePath="/images/postgre.png" />
-    <SkillImage text="Redis" imagePath="/images/redis.png" />
-    <SkillImage text="GitHub" imagePath="/images/github.png" />
-    <SkillImage text="AWS" imagePath="/images/aws.png" />
+  <div class="skills_layout">
+    <div class="skills_intro">
+      <p class="skills_kicker">Core stack</p>
+      <p class="skills_text">
+        Backend systems, cloud infrastructure, and product-facing engineering tools
+        used across the projects and roles shown below.
+      </p>
+    </div>
+    <div class="wrapper">
+      <SkillImage text="Node.js" imagePath="/images/node.png" />
+      <SkillImage text="React" imagePath="/images/react.png" />
+      <SkillImage text="JavaScript" imagePath="/images/js.png" />
+      <SkillImage text="HTML" imagePath="/images/html5.png" />
+      <SkillImage text="CSS" imagePath="/images/css.png" />
+      <SkillImage text="Docker" imagePath="/images/docker.png" />
+      <SkillImage text="MongoDB" imagePath="/images/mongo.png" />
+      <SkillImage text="PostgreSQL" imagePath="/images/postgre.png" />
+      <SkillImage text="Redis" imagePath="/images/redis.png" />
+      <SkillImage text="GitHub" imagePath="/images/github.png" />
+      <SkillImage text="AWS" imagePath="/images/aws.png" />
+    </div>
   </div>
 </Section>
 
 <style>
+  .skills_layout {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+  .skills_intro {
+    display: grid;
+    gap: var(--space-xs);
+    max-width: 30rem;
+  }
+  .skills_kicker {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .skills_text {
+    margin: 0;
+    max-width: 34ch;
+  }
   .wrapper {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
     gap: var(--space-md);
+  }
+  @media only screen and (min-width: 960px) {
+    .skills_layout {
+      grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr);
+      align-items: start;
+      column-gap: clamp(2rem, 5vw, 4rem);
+    }
+    .wrapper {
+      transform: translateY(0.45rem);
+    }
   }
 </style>

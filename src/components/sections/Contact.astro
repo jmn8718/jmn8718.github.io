@@ -4,38 +4,60 @@ import Section from "../Section.astro";
 ---
 
 <Section title="contact and hiring" anchor="contact">
-  <p class="text">
-    If you are hiring a backend software engineer, send me an email at
-    <a href="mailto:jmn8718@gmail.com">jmn8718@gmail.com</a>
-    or reach out through the platforms below:
-  </p>
-  <div class="icons_wrapper contact_icons">
-    <a href="mailto:jmn8718@gmail.com" aria-label="Email">
-      <Icon name="fa6-solid:envelope" size={22} />
-    </a>
-    <a href="https://www.linkedin.com/in/jm8nav/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <Icon name="fa6-brands:linkedin" size={22} />
-    </a>
-    <a href="https://medium.com/@jmn8718" target="_blank" rel="noopener noreferrer" aria-label="Medium">
-      <Icon name="fa6-brands:medium" size={22} />
-    </a>
-    <a href="https://github.com/jmn8718" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-      <Icon name="fa6-brands:github" size={22} />
-    </a>
-    <a href="https://gitlab.com/users/jmn8718" target="_blank" rel="noopener noreferrer" aria-label="GitLab">
-      <Icon name="fa6-brands:gitlab" size={22} />
-    </a>
+  <div class="contact_layout">
+    <div class="contact_copy">
+      <p class="contact_kicker">Available for backend roles</p>
+      <p class="text">
+        If you are hiring a backend software engineer, send me an email at
+        <a href="mailto:jmn8718@gmail.com">jmn8718@gmail.com</a>
+        or reach out through the platforms below.
+      </p>
+    </div>
+    <div class="icons_wrapper contact_icons">
+      <a href="mailto:jmn8718@gmail.com" aria-label="Email">
+        <Icon name="fa6-solid:envelope" size={22} />
+      </a>
+      <a href="https://www.linkedin.com/in/jm8nav/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn, opens in new tab">
+        <Icon name="fa6-brands:linkedin" size={22} />
+      </a>
+      <a href="https://medium.com/@jmn8718" target="_blank" rel="noopener noreferrer" aria-label="Medium, opens in new tab">
+        <Icon name="fa6-brands:medium" size={22} />
+      </a>
+      <a href="https://github.com/jmn8718" target="_blank" rel="noopener noreferrer" aria-label="GitHub, opens in new tab">
+        <Icon name="fa6-brands:github" size={22} />
+      </a>
+      <a href="https://gitlab.com/users/jmn8718" target="_blank" rel="noopener noreferrer" aria-label="GitLab, opens in new tab">
+        <Icon name="fa6-brands:gitlab" size={22} />
+      </a>
+    </div>
   </div>
 </Section>
 
 <style>
+  .contact_layout {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+  .contact_copy {
+    display: grid;
+    gap: var(--space-xs);
+    min-width: 0;
+  }
+  .contact_kicker {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
   .icons_wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     gap: var(--space-md);
-    margin: 16px 0 0;
+    margin: var(--space-md) 0 0;
     width: fit-content;
     max-width: 100%;
   }
@@ -59,5 +81,18 @@ import Section from "../Section.astro";
     text-align: left;
     width: 100%;
     margin: 0;
+    max-width: 34rem;
+    overflow-wrap: anywhere;
+  }
+  @media only screen and (min-width: 880px) {
+    .contact_layout {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      column-gap: clamp(2rem, 5vw, 4rem);
+    }
+    .icons_wrapper {
+      margin-top: 0;
+      justify-content: flex-end;
+    }
   }
 </style>

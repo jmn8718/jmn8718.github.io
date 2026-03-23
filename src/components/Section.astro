@@ -23,27 +23,28 @@ const { title, anchor, hideTitle = false, flushTop = false, noDivider = false } 
 </section>
 <style>
 	h2 {
-		position: relative;
 		margin: 0;
-		padding: 0 0 var(--space-xs);
-		font-size: clamp(1.15rem, 2vw, 1.45rem);
+		padding: 0;
+		font-size: clamp(1.05rem, 1.8vw, 1.3rem);
 		font-weight: 800;
-		color: var(--text-main);
+		color: var(--brand-strong);
 		text-transform: uppercase;
-		display: inline-block;
-		inline-size: fit-content;
-		max-width: 100%;
+		display: grid;
+		grid-template-columns: auto minmax(2.5rem, 8rem);
+		align-items: center;
+		column-gap: clamp(0.75rem, 2vw, 1.5rem);
+		max-width: min(100%, 34rem);
 		text-align: left;
-		letter-spacing: 0.14em;
+		letter-spacing: 0.18em;
 	}
 	h2::after {
 		content: "";
 		display: block;
 		inline-size: 100%;
-		block-size: 0.22rem;
-		margin-top: var(--space-sm);
-		border-radius: 999px;
-		background: linear-gradient(90deg, var(--brand), var(--accent));
+		block-size: 1px;
+		transform: translateY(1px);
+		background:
+			linear-gradient(90deg, var(--brand-strong) 0 42%, color-mix(in srgb, var(--accent) 72%, transparent) 100%);
 	}
 
 	.section_container {
@@ -58,7 +59,7 @@ const { title, anchor, hideTitle = false, flushTop = false, noDivider = false } 
 		margin: 0 auto;
 		padding: 0 var(--page-gutter);
 		display: grid;
-		gap: var(--space-lg);
+		gap: clamp(1rem, 2.5vw, var(--space-lg));
 	}
 	.section_content {
 		padding: 0;
@@ -71,5 +72,12 @@ const { title, anchor, hideTitle = false, flushTop = false, noDivider = false } 
 	}
 	.section_content[data-no-divider="true"] {
 		padding-top: 0;
+	}
+	@media only screen and (max-width: 640px) {
+		h2 {
+			grid-template-columns: 1fr;
+			row-gap: var(--space-sm);
+			max-width: 100%;
+		}
 	}
 </style>

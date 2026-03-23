@@ -5,168 +5,200 @@ import ProjectBlock from "../ProjectBlock.astro";
 ---
 
 <Section title="software projects" anchor="projects">
-  <div class="project_group">
-    <h3 class="block_title">Professional Projects</h3>
-    <div class="project_stack">
-      <div class="project-block">
-        <ProjectBlock
-          link="https://criptan.com/"
-          projectName="Criptan"
-          description="Crypto finance platform"
-        >
-          <p>During this project I worked as a backend software engineer, including:</p>
-          <ul>
-            <li>Developing serverless backend services using AWS.</li>
-            <li>Designing event-driven integrations for core product workflows.</li>
-            <li>Building new services aligned with product and business requirements.</li>
-          </ul>
-          <p>
-            Through this experience, I strengthened my expertise in AWS cloud
-            architecture and scalable backend system design.
-          </p>
-        </ProjectBlock>
-      </div>
-      <div class="project-block">
-        <ProjectBlock
-          projectName="Plingo"
-          description="Online language education platform"
-        >
-          <p>
-            As part of my role, I primarily focused on server-side development where I
-            was responsible for designing and implementing various functionalities and
-            services on AWS.
-          </p>
-        </ProjectBlock>
-      </div>
-      <div class="project-block">
-        <ProjectBlock
-          link="https://hollaex.com/"
-          projectName="Hollaex"
-          description="Cryptocurrency Exchange"
-        >
-          <p>
-            I was responsible for both the server and client sides of the project.
-            Starting from scratch, I began by building basic functionality on the server
-            side and then moved on to the client side once the server had been set up.
-          </p>
-          <p>
-            I worked closely with the CEO to implement functionality based on
-            market-specific requirements, while also ensuring that the project was fully
-            customizable using SQL triggers and functions at the database level.
-          </p>
-          <p>
-            My goal was to create a system that could be adapted to different fiat
-            currencies and cryptocurrencies for trading. As a result, I made the
-            project fully customizable to meet the needs of various clients.
-          </p>
-          <p>
-            First deployed crypto exchange:
-            <a
-              href="https://pro.exir.io/login"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <strong>Exir</strong>
-            </a>
-            , since December 2017.
-          </p>
-        </ProjectBlock>
-      </div>
-      <div class="project-block">
-        <ProjectBlock
-          projectName="XRAY"
-          description="Cryptocurrency Trade platform."
-        >
-          <p>
-            I was responsible for both server and client-side development on this
-            project. My main task was to refactor and migrate the codebase to a new
-            structure.
-          </p>
-          <p>
-            On the server side, I migrated the codebase from mongoDB to PostgreSQL and
-            refactored the existing code to use promises instead of callbacks.
-          </p>
-          <p>
-            On the client side, I built the skeleton of the current design and
-            developed core components for the trading screen while contributing product
-            and UX feedback with the designer.
-          </p>
-        </ProjectBlock>
-      </div>
-      <div class="project-block">
-        <ProjectBlock
-          link="https://www.bbvaapimarket.com"
-          projectName="BBVA APIMarket"
-          description="API portal for developers"
-        >
-          <p>
-            During the first stage of the project, I contributed across frontend
-            development with AngularJS, SASS, and jQuery, CMS development with Liferay,
-            and scripting for internal services using Bash, Python, and Node.js.
-          </p>
-          <p>
-            In the second stage, my focus shifted to backend development using Java and
-            Spring. A significant part of my contribution was processing RAML files to
-            generate static API documentation that was published on the portal.
-          </p>
-          <p>
-            You can see one example
-            <a
-              href="https://es.bbvaapimarket.com/documentation/bancomer/accounts?lang=es"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              here
-            </a>.
-          </p>
-        </ProjectBlock>
+  <div class="projects_layout">
+    <div class="project_group">
+      <h3 class="block_title">Professional Projects</h3>
+      <div class="project_stack">
+        <div class="project-block project-block-featured">
+          <ProjectBlock
+            link="https://criptan.com/"
+            projectName="Criptan"
+            description="Crypto finance platform"
+          >
+            <p>During this project I worked as a backend software engineer, including:</p>
+            <ul>
+              <li>Developing serverless backend services using AWS.</li>
+              <li>Designing event-driven integrations for core product workflows.</li>
+              <li>Building new services aligned with product and business requirements.</li>
+            </ul>
+            <p>
+              Through this experience, I strengthened my expertise in AWS cloud
+              architecture and scalable backend system design.
+            </p>
+          </ProjectBlock>
+        </div>
+        <div class="project-block">
+          <ProjectBlock
+            projectName="Plingo"
+            description="Online language education platform"
+          >
+            <p>
+              As part of my role, I primarily focused on server-side development where I
+              was responsible for designing and implementing various functionalities and
+              services on AWS.
+            </p>
+          </ProjectBlock>
+        </div>
+        <div class="project-block">
+          <ProjectBlock
+            link="https://hollaex.com/"
+            projectName="Hollaex"
+            description="Cryptocurrency Exchange"
+          >
+            <p>
+              I was responsible for both the server and client sides of the project.
+              Starting from scratch, I began by building basic functionality on the server
+              side and then moved on to the client side once the server had been set up.
+            </p>
+            <p>
+              I worked closely with the CEO to implement functionality based on
+              market-specific requirements, while also ensuring that the project was fully
+              customizable using SQL triggers and functions at the database level.
+            </p>
+            <p>
+              My goal was to create a system that could be adapted to different fiat
+              currencies and cryptocurrencies for trading. As a result, I made the
+              project fully customizable to meet the needs of various clients.
+            </p>
+            <p>
+              First deployed crypto exchange:
+              <a
+                href="https://pro.exir.io/login"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <strong>Exir</strong>
+                <span class="sr-only">, opens in new tab</span>
+              </a>
+              , since December 2017.
+            </p>
+          </ProjectBlock>
+        </div>
+        <div class="project-block">
+          <ProjectBlock
+            projectName="XRAY"
+            description="Cryptocurrency Trade platform."
+          >
+            <p>
+              I was responsible for both server and client-side development on this
+              project. My main task was to refactor and migrate the codebase to a new
+              structure.
+            </p>
+            <p>
+              On the server side, I migrated the codebase from mongoDB to PostgreSQL and
+              refactored the existing code to use promises instead of callbacks.
+            </p>
+            <p>
+              On the client side, I built the skeleton of the current design and
+              developed core components for the trading screen while contributing product
+              and UX feedback with the designer.
+            </p>
+          </ProjectBlock>
+        </div>
+        <div class="project-block">
+          <ProjectBlock
+            link="https://www.bbvaapimarket.com"
+            projectName="BBVA APIMarket"
+            description="API portal for developers"
+          >
+            <p>
+              During the first stage of the project, I contributed across frontend
+              development with AngularJS, SASS, and jQuery, CMS development with Liferay,
+              and scripting for internal services using Bash, Python, and Node.js.
+            </p>
+            <p>
+              In the second stage, my focus shifted to backend development using Java and
+              Spring. A significant part of my contribution was processing RAML files to
+              generate static API documentation that was published on the portal.
+            </p>
+            <p>
+              You can see one example
+              <a
+                href="https://es.bbvaapimarket.com/documentation/bancomer/accounts?lang=es"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+                <span class="sr-only">, opens in new tab</span>
+              </a>.
+            </p>
+          </ProjectBlock>
+        </div>
       </div>
     </div>
+    <aside class="project_group project_group_secondary">
+      <h3 class="block_title">Personal Projects</h3>
+      <p class="project_note">
+        Open-source work and side projects live in my public repositories.
+      </p>
+      <div class="icons_wrapper">
+        <a
+          href="https://github.com/jmn8718"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open GitHub profile, opens in new tab"
+        >
+        <Icon name="fa6-brands:github" size={26} />
+        </a>
+        <a
+          href="https://gitlab.com/users/jmn8718"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open GitLab profile, opens in new tab"
+        >
+        <Icon name="fa6-brands:gitlab" size={26} />
+        </a>
+      </div>
+    </aside>
   </div>
-  <div class="project_group project_group_secondary">
-    <h3 class="block_title">Personal Projects</h3>
-    <p class="project_note">
-      You can find more open-source and personal software projects on my repositories.
-    </p>
-    <div class="icons_wrapper">
-      <a href="https://github.com/jmn8718" target="_blank" rel="noopener noreferrer">
-      <Icon name="fa6-brands:github" size={30} />
-      </a>
-      <a href="https://gitlab.com/users/jmn8718" target="_blank" rel="noopener noreferrer">
-      <Icon name="fa6-brands:gitlab" size={30} />
-      </a>
-    </div>
+  <div class="projects_closer">
+    Selected roles focused on backend systems, API platforms, and cloud delivery.
   </div>
 </Section>
 
 <style>
+  .projects_layout {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
   .project_group {
     display: grid;
     gap: var(--space-md);
+    min-width: 0;
   }
   .project_stack {
     display: grid;
     gap: var(--space-lg);
+    min-width: 0;
   }
   .icons_wrapper {
     width: fit-content;
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-md);
   }
   .block_title {
     text-align: left;
-    font-size: 1.05rem;
-    color: var(--text-main);
+    font-size: 0.96rem;
+    color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.14em;
     margin: 0;
   }
   .project_group_secondary {
-    padding-top: var(--space-lg);
+    align-content: start;
+    gap: var(--space-lg);
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+    border-radius: 1.4rem;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--surface-elevated) 94%, white), color-mix(in srgb, var(--surface-soft) 72%, white));
   }
   .project_note {
     margin: 0;
-    max-width: 60ch;
+    max-width: 32ch;
+    overflow-wrap: anywhere;
   }
   .icons_wrapper a {
     display: inline-flex;
@@ -178,10 +210,38 @@ import ProjectBlock from "../ProjectBlock.astro";
     border-radius: 999px;
     color: var(--text-main);
     background: var(--surface-soft);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
   }
   .icons_wrapper a:hover,
   .icons_wrapper a:focus-visible {
     color: var(--brand);
     background: var(--brand-soft);
+    transform: translateY(-1px);
+  }
+  .projects_closer {
+    max-width: 34rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  :global(.project-block-featured) {
+    padding-top: clamp(1.25rem, 3vw, 1.75rem);
+    padding-bottom: clamp(0.25rem, 1vw, 0.5rem);
+  }
+  @media only screen and (min-width: 1120px) {
+    .projects_layout {
+      grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem);
+      align-items: start;
+      column-gap: clamp(2rem, 5vw, 4rem);
+    }
+    .project_group_secondary {
+      position: sticky;
+      top: 5.5rem;
+    }
   }
 </style>
