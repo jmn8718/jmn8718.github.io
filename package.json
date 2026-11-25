@@ -13,10 +13,13 @@
     "@astrojs/check": "^0.9.12",
     "astro": "^7.4.13",
     "astro-icon": "^1.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-solid": "^1.2.4"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }
