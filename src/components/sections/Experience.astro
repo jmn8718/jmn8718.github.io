@@ -9,21 +9,25 @@ import WorkBlock from "../WorkBlock.astro";
     companyName="Criptan"
     period="January 2021 - Present"
     location="Remote - Seoul 🇰🇷"
-    role="Software Engineer"
+    role="Senior Software Engineer"
   >
     <p>
-      As a Senior Software Engineer at
+      As a Senior Software Engineer at{" "}
       <a href="https://www.criptan.es/?lang=en" target="_blank" rel="noopener noreferrer">Criptan<span class="sr-only">, opens in new tab</span></a>,
-      I develop backend services with Node.js and TypeScript on an event-driven AWS serverless architecture.
-      I define and deploy services with AWS CDK and work across Lambda, ECS, DynamoDB, queues, and event buses.
+      I build and run the backend of a regulated crypto platform with Node.js and TypeScript on an event-driven AWS
+      serverless architecture, defined and deployed with AWS CDK across Lambda, ECS, DynamoDB, queues, and event buses.
     </p>
     <p>
-      I work with both SQL and DynamoDB data models and use database events to trigger downstream workflows.
-      I also lead greenfield backend projects and the ongoing migration of core business logic from PHP to TypeScript.
+      Over the last year I shipped an enterprise API with API keys and withdrawals, a public API for external
+      integrations, and an MCP server that lets AI assistants use Criptan accounts securely. I also integrated
+      partner providers through webhooks and bank connections, and built recurring purchases and trading flows
+      with quote reconciliation and automatic recheck of failed transactions.
     </p>
     <p>
-      My role includes close collaboration with operations and product teams to refine requirements and ship systems
-      that stay aligned with product and client needs.
+      I led the migration of transaction data from DynamoDB to SQL, with read replicas, and I rebuilt the analytics
+      and reporting queries on top of it. I also moved core business logic from PHP to TypeScript, added database
+      tests, upgraded the services to Node 24 and AWS SDK v3, and tightened security around credentials and request
+      validation. I work closely with operations and product to turn requirements into reliable systems.
     </p>
   </WorkBlock>
   <WorkBlock

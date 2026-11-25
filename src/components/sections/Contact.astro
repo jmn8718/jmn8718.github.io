@@ -3,14 +3,14 @@ import { Icon } from "astro-icon/components";
 import Section from "../Section.astro";
 ---
 
-<Section title="contact and hiring" anchor="contact">
+<Section title="contact" anchor="contact">
   <div class="contact_layout">
     <div class="contact_copy">
       <p class="contact_kicker">Available for backend roles</p>
       <p class="text">
-        If you are hiring a backend software engineer, send me an email at
-        <a href="mailto:jmn8718@gmail.com">jmn8718@gmail.com</a>
-        or reach out through the platforms below.
+        If you are hiring a backend software engineer, send me an email at{" "}
+        <a href="mailto:jmn8718@gmail.com">jmn8718@gmail.com</a>{" "}
+        or reach out through any of these platforms.
       </p>
     </div>
     <div class="icons_wrapper contact_icons">
@@ -86,13 +86,13 @@ import Section from "../Section.astro";
   }
   @media only screen and (min-width: 880px) {
     .contact_layout {
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: start;
-      column-gap: clamp(2rem, 5vw, 4rem);
+      grid-template-columns: auto auto;
+      justify-content: start;
+      align-items: center;
+      column-gap: clamp(1.5rem, 3vw, 2.5rem);
     }
     .icons_wrapper {
       margin-top: 0;
-      justify-content: flex-end;
     }
   }
 </style>
